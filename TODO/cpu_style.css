@@ -1,0 +1,207 @@
+*{padding: 0;margin: 0;border: 0;}
+*,*:before,*:after{-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+nav,footer,header,aside{display: block;}
+html,body{height:100%;width:100%;font-size:100%;line-height:1;font-size:14px;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+input,button,textarea{font-family:inherit;}
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner{padding:0;border:0;}
+a,a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
+
+
+@font-face {
+	font-family: 'PT Root UI-Regular';
+	src: url('/css/PTRootUIWeb/PTRootUI-Regular.woff2') format('woff2') url('/css/PTRootUIWeb/PTRootUI-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
+
+.logo a {
+    background: url('../resoures/1036686.png') left no-repeat;
+    background-size: 35px 35px;
+    padding-left: 50px;
+    display: block;
+    width: 150px;
+    height: 35px;
+    font-size: 25px;
+}
+
+.wtf {
+    font-size: 12px;
+}
+
+a:visited {
+    color :black;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.header_all_info {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 200px;
+}
+
+.info_block ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.function:hover {
+    color: orange;
+}
+
+.choose_number {
+    margin-right: 220px;
+}
+
+.catalog {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 200px;
+}
+
+.catalog_search {
+    margin-left: 93px;
+    padding-top: 22px;
+}
+
+.input_search {
+    width: 30em;
+    height: 40px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.input_search:focus {
+    box-shadow: 0px 15px 10px -15px rgba(127, 190, 213, 0.93);
+}
+
+
+.catalog_menu_select {
+    padding: 20px 0;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.catalog_cart {
+    padding-top: 45px;
+}
+
+.catalog_cart ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.cart:hover {
+    color: orange;
+}
+
+.cpu_picture{
+    width: 250px;
+    height: 200px;
+    grid-area: image;
+}
+
+.cpu_products{
+    padding: 0px 200px;
+    box-sizing: border-box;
+    min-width: 0px;
+    margin-top: 10px;
+}
+
+.cpu_item{
+    position: relative;
+    display: grid;
+    grid-template-columns: 220px 52px auto 52px 239px;
+    grid-template-areas:
+    "image . header    .       controls" 
+    "image . separator   .       .     " 
+    "image . description description order   ";
+    padding: 20px 30px 30px;
+    background-color: white;
+    border-bottom: 1px solid rgb(223, 223, 225);
+    transition: all 0.3s ease 0s;
+  }
+.cpu_item:hover{
+    box-shadow: 0 0 10px rgb(187, 187, 187);
+}
+
+.cpu_specifications{
+    list-style: none;
+    grid-area: description;
+    font-size: 14px;
+    line-height: 18px;
+}
+.cpu_name{
+    grid-area: header;
+    font-size: 20px;
+}
+.css_line{
+    grid-area: separator;
+    width: 100%;
+    height: 1px;
+    background-color: rgb(245, 245, 246);
+}
+
+.cpu_price{
+    font-size: 32px;
+    flex-wrap: wrap;
+    -moz-box-pack: end;
+    justify-content: flex-end;
+    align-self: flex-end;
+    gap: 8px;
+    grid-area: order;
+    padding-bottom: 40px;
+}
+
+.cpu_button{
+    height: 40px;
+    padding: 0px 20px;
+    font-size: 16px;
+    line-height: 20px;
+    margin: 0px;
+    box-sizing: border-box;
+    outline: 0px;
+    font-style: inherit;
+    font-variant: inherit;
+    font-stretch: inherit;
+    font-family: inherit;
+    font-size-adjust: inherit;
+    font-kerning: inherit;
+    font-optical-sizing: inherit;
+    font-language-override: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    text-decoration: none;
+    white-space: nowrap;
+    appearance: none;
+    overflow: hidden;
+    cursor: pointer;
+    width: 100%;
+    -moz-box-pack: center;
+    justify-content: center;
+    -moz-box-align: center;
+    align-items: center;
+    position: relative;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    text-align: center;
+    transition-property: color, font-weight, border-bottom-color;
+    transition-duration: 150ms;
+    transition-timing-function: ease-in-out;
+    background-color: rgb(176, 176, 176);
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+}
