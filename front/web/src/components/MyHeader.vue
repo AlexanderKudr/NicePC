@@ -159,7 +159,6 @@ a:visited {
     padding: 0 200px;
     position: sticky;
     top: 10px;
-    z-index: 1;
 }
 
 .catalog_search {
