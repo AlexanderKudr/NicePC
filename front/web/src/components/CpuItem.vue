@@ -7,12 +7,12 @@
 			</a>
 			<div class="css_line"></div>
 			<ul class="cpu_specifications">
-				<li>{{ this.core }}</li>
-				<li>Частота: 2.6 ГГц и 4.4 ГГц в режиме Turbo;</li>
-				<li>Сокет: LGA 1200;</li>
-				<li>Потоков 6, 12;</li>
-				<li>Тепловыделение: 65 Вт;</li>
-				<li>Технологический процесс: 14 нм;</li>
+				<li>Ядро: {{ this.cpu.core }}</li>
+				<li>Частота: {{ this.cpu.cpu_clock }}</li>
+				<li>Число ядер: {{ this.cpu.threads }}</li>
+				<li>Сокет: {{ this.cpu.socket }}</li>
+				<li>Тепловыделение: {{ this.cpu.tdp }}</li>
+				<li>Технологический процесс: {{ this.cpu.nm }}</li>
 			</ul>
 			<p class="cpu_price">11 490₽
 			    <button class="cpu_button">
@@ -24,13 +24,37 @@
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
-                core: "Ядро: Sandy Bridge"
+import axios from 'axios';
+export default {
+    data() {
+        return {
+             cpu: {
+                core: "",
+                cpu_clock: "",
+                threads: "",
+                socket: "",
+                tdp: "",
+                nm: "",
+             }
+        }
+    },
+    methods:{
+        async fetchCpu() {
+            try {
+                await axios.get('http://127.0.0.1:8000/cpu_item/').then((res) => {
+                this.cpu = res.data[0]
+                })
+            } 
+            catch (error) {
+                alert('Error while posting to API')
             }
         }
+    },
+    beforeMount() {
+        this.fetchCpu()
     }
+    
+}
 </script>
 
 <style>

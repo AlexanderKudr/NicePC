@@ -56,7 +56,7 @@
 			</div>
 			<div class="catalog_cart">
 				<ul>
-					<li><button @click="showDialog" class="cart">Войти</button></li>
+					<li><button @click="showDialog" class="login_cart">Войти</button></li>
 					<li><a class="cart" href="">Избранное</a></li>
 					<li><a class="cart" href="">Сравнение</a></li>
 					<li><a class="cart" href="">Корзина</a></li>
@@ -130,7 +130,7 @@ a:visited {
 }
 
 * {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .header_all_info {
@@ -192,6 +192,7 @@ a:visited {
     display: flex;
     justify-content: space-between;
     gap: 30px;
+    align-items: center;
 }
 
 .cart:hover {
