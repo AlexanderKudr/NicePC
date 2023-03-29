@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from db import models
 from db.database import engine
-from routers import user, post, comment, frontend_posts
+from routers import user, post, comment, cpu_item
 from fastapi.staticfiles import StaticFiles
 from auth import authentication
 from fastapi.middleware.cors import CORSMiddleware
@@ -12,7 +12,7 @@ app.include_router(user.router)
 app.include_router(post.router)
 app.include_router(authentication.router)
 app.include_router(comment.router)
-app.include_router(frontend_posts.router)
+app.include_router(cpu_item.router)
 
 @app.get('/')
 def root():
