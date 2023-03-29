@@ -65,6 +65,10 @@ class CommentBase(BaseModel):
     text: str
     post_id: int
 
-class FrontPostBase(BaseModel):
-    title: str
-    body: str
+class CpuItemBase(BaseModel):
+    core
+    cpu_clock = Column(String)
+    socket = Column(String)
+    threads
+    tdp
+    nm 

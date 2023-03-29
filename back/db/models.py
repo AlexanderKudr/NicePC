@@ -23,6 +23,7 @@ class DbPost(Base):
     user = relationship('DbUser', back_populates='items')
     comments = relationship('DbComment', back_populates='post')
 
+
 class DbComment(Base):
     __tablename__ = 'comment'
     id = Column(Integer, primary_key=True, index=True)
@@ -38,3 +39,14 @@ class DbFrontPost(Base):
     id = Column(Integer, primary_key=True, index=True)
     title = Column(String)
     body = Column(String)
+
+
+class DbCpuItem(Base):
+    __tablename__ = 'CpuItem'
+    id = Column(Integer, primary_key=True, index=True)
+    core = Column(String)
+    cpu_clock = Column(String)
+    socket = Column(String)
+    threads = Column(String)
+    tdp = Column(String)
+    nm = Column(String)

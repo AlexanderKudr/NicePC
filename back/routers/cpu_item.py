@@ -6,12 +6,12 @@ from db import db_frontend_posts
 
 
 router = APIRouter(
-    prefix='/frontend_posts',
-    tags=['frontend_posts']
+    prefix='/cpu_item',
+    tags=['cpu_item']
 )
 
 @router.post('/')
-def create_post(request: FrontPostBase, db: Session = Depends(get_db)):
+def create_cpu_item(request: FrontPostBase, db: Session = Depends(get_db)):
     return db_frontend_posts.create_post(db, request)
 
 
