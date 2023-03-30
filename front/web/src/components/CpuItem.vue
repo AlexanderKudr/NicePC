@@ -7,12 +7,12 @@
 			</a>
 			<div class="css_line"></div>
 			<ul class="cpu_specifications">
-				<li>Ядро: {{ this.cpu.core }}</li>
-				<li>Частота: {{ this.cpu.cpu_clock }}</li>
-				<li>Число ядер: {{ this.cpu.threads }}</li>
-				<li>Сокет: {{ this.cpu.socket }}</li>
-				<li>Тепловыделение: {{ this.cpu.tdp }}</li>
-				<li>Технологический процесс: {{ this.cpu.nm }}</li>
+				<li>Ядро: {{ cpu_item.core }}</li>
+				<li>Частота: {{ cpu_item.cpu_clock }}</li>
+				<li>Число ядер: {{ cpu_item.threads }}</li>
+				<li>Сокет: {{ cpu_item.socket }}</li>
+				<li>Тепловыделение: {{ cpu_item.tdp }}</li>
+				<li>Технологический процесс: {{ cpu_item.nm }}</li>
 			</ul>
 			<p class="cpu_price">7 990₽
 			    <button class="cpu_button">
@@ -24,36 +24,14 @@
 </template>
 
 <script>
-import axios from 'axios';
+
 export default {
-    data() {
-        return {
-             cpu: {
-                core: "",
-                cpu_clock: "",
-                threads: "",
-                socket: "",
-                tdp: "",
-                nm: "",
-             }
+    props: {
+        cpu_item: {
+            type: Object,
+            required: true,
         }
-    },
-    methods:{
-        async fetchCpu() {
-            try {
-                await axios.get('http://127.0.0.1:8000/cpu_item/').then((res) => {
-                this.cpu = res.data[0]
-                })
-            } 
-            catch (error) {
-                alert('Error while posting to API')
-            }
-        }
-    },
-    beforeMount() {
-        this.fetchCpu()
     }
-    
 }
 </script>
 
