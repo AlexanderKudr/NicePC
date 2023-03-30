@@ -1,9 +1,9 @@
 !<template>
     <div>
         <div class="cpu_item">
-            <img class="cpu_picture" src="../resoures/6028061696.jpg" alt="">
+            <img class="cpu_picture" src="../resoures/amd_ryzen5-3600.jpg" alt="">
 			<a  class="cpu_name" href="">
-					Intel Core i5-10400F, OEM
+                AMD Ryzen 5 3600
 			</a>
 			<div class="css_line"></div>
 			<ul class="cpu_specifications">
@@ -14,7 +14,7 @@
 				<li>Тепловыделение: {{ this.cpu.tdp }}</li>
 				<li>Технологический процесс: {{ this.cpu.nm }}</li>
 			</ul>
-			<p class="cpu_price">11 490₽
+			<p class="cpu_price">7 990₽
 			    <button class="cpu_button">
 				    В корзину
 			    </button>
