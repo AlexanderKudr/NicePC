@@ -1,9 +1,9 @@
 !<template>
     <div>
         <div class="cpu_item">
-            <img class="cpu_picture" src="../resoures/amd_ryzen5-3600.jpg" alt="">
+            <img class="cpu_picture" src="../resoures/cpu_image_dev.png" alt="">
 			<a  class="cpu_name" href="">
-                AMD Ryzen 5 3600
+                {{ cpu_item.name }}
 			</a>
 			<div class="css_line"></div>
 			<ul class="cpu_specifications">
@@ -14,7 +14,7 @@
 				<li>Тепловыделение: {{ cpu_item.tdp }}</li>
 				<li>Технологический процесс: {{ cpu_item.nm }}</li>
 			</ul>
-			<p class="cpu_price">7 990₽
+			<p class="cpu_price">{{ cpu_item.price }}
 			    <button class="cpu_button">
 				    В корзину
 			    </button>

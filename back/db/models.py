@@ -42,11 +42,13 @@ class DbFrontPost(Base):
 
 
 class DbCpuItem(Base):
-    __tablename__ = 'CpuItem'
+    __tablename__ = 'cpu_item'
     id = Column(Integer, primary_key=True, index=True)
+    name = Column(String)
     core = Column(String)
     cpu_clock = Column(String)
     socket = Column(String)
     threads = Column(String)
     tdp = Column(String)
     nm = Column(String)
+    price = Column(String)

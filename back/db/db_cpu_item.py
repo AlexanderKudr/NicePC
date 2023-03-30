@@ -6,13 +6,14 @@ from fastapi import HTTPException, status
 
 def create_cpu(db: Session, request: CpuItemBase):
     new_cpu = DbCpuItem(
-
+        name = request.name,
         core = request.core,
         cpu_clock = request.cpu_clock,
         socket = request.socket,
         threads = request.threads,
         tdp = request.tdp,
-        nm = request.nm
+        nm = request.nm,
+        price = request.price
     )
     db.add(new_cpu)
     db.commit()
