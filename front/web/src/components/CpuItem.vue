@@ -14,7 +14,7 @@
 				<li>Тепловыделение: {{ cpu_item.tdp }}</li>
 				<li>Технологический процесс: {{ cpu_item.nm }}</li>
 			</ul>
-			<p class="cpu_price">{{ cpu_item.price }}
+			<p class="cpu_price">{{ cpu_item.price }}₽
 			    <button class="cpu_button">
 				    В корзину
 			    </button>
