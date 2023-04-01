@@ -56,13 +56,13 @@
 			</div>
 			<div class="catalog_cart">
 				<ul>
-					<li><button @click="showDialog" class="login_cart">Войти</button></li>
+					<li><button @click="showDialog" class="login_cart">{{ username }}</button></li>
 					<li><a class="cart" href="">Избранное</a></li>
 					<li><a class="cart" href="">Сравнение</a></li>
 					<li><a class="cart" href="">Корзина</a></li>
 				</ul>	
 			</div>
-		</div>	
+		</div>
 	</header>
 </template>
 
@@ -79,7 +79,8 @@
             loginForm: {
                 username: '',
                 password: '',
-            }
+            },
+            username: 'Войти'
 
         }
     },
@@ -92,7 +93,7 @@
         try {
             var qs = require('qs')
             await axios.post('http://127.0.0.1:8000/login', qs.stringify({'username': this.loginForm.username, 'password': this.loginForm.password})).then((res) => {
-            console.log(res)
+            this.username = res.data.username
             this.loginForm = {
                 username: '',
                 password: '',
