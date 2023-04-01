@@ -69,7 +69,6 @@
 <script>
 	import Modal from './Modal.vue'
     import axios from 'axios'
-
     export default {
     components: {
     Modal
@@ -91,7 +90,8 @@
     async tryLogin(post) {
         this.dialogVisible = false
         try {
-            await axios.post('http://127.0.0.1:8000/login', this.loginForm).then((res) => {
+            var qs = require('qs')
+            await axios.post('http://127.0.0.1:8000/login', qs.stringify({'username': this.loginForm.username, 'password': this.loginForm.password})).then((res) => {
             console.log(res)
             this.loginForm = {
                 username: '',
