@@ -13,7 +13,7 @@ router = APIRouter(
     tags=['cpu_item']
 )
 
-@router.post('/')
+@router.post('/123')
 def create_cpu_item(request: str = Form(), image: UploadFile = File(...), db: Session = Depends(get_db)):
     try:
         item = CpuItemBase.parse_obj(json.loads(request))

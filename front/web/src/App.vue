@@ -17,6 +17,7 @@
 </template>
 
 <script>
+import axios from 'axios'
     export default {
         data() {
             return {
@@ -30,7 +31,7 @@
                     nm: '',
                     price: '',
                 },
-                image: ''
+                image: {}
 
             }
         },
@@ -39,14 +40,17 @@
             this.image = e
         },
         async sendToServer() {
-            console.log(this.cpu_form)
-            console.log(this.image)
             try {
-                await axios.post('http://localhost:8000/cpu_item/', this.cpu_form, this.image).then((res) => {
+
+                var formData = new FormData()
+                formData.append('image', this.image)
+                formData.append('request', JSON.stringify(this.cpu_form))
+                var headers = { 'Content-Type': 'multipart/form-data' }
+                await axios.post('http://localhost:8000/cpu_item/123/', formData, {headers: headers}).then((res) => {
                 console.log(res)
             })
             } catch (error) {
-                alert('Error while posting to API')
+                alert(error)
             }
         }
     }
