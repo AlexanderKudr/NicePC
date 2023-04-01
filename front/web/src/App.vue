@@ -1,73 +1,46 @@
-<template>
-    <div>
-        <form @submit.prevent class="send_cpu">
-            <input type="text" placeholder="Name" v-model="cpu_form.name">
-            <input type="text" placeholder="Core" v-model="cpu_form.core">
-            <input type="text" placeholder="Cpu clock" v-model="cpu_form.cpu_clock">
-            <input type="text" placeholder="Socket" v-model="cpu_form.socket">
-            <input type="text" placeholder="Threads" v-model="cpu_form.threads">
-            <input type="text" placeholder="Tdp" v-model="cpu_form.tdp">
-            <input type="text" placeholder="Nm" v-model="cpu_form.nm">
-            <input type="text" placeholder="Price" v-model="cpu_form.price">
-            <label for="file" style="margin-left: 20px;">Choose picture</label>
-            <input type="file" @change="updatePhoto($event.target.files[0])" accept="image/*">
-            <button @click="sendToServer" class="btn">Отправить</button>
-        </form>
+!<template>
+    <div class="app">
+        <my-header/>
+        <cpu-content/>
+        <my-footer/>
     </div>
 </template>
 
 <script>
-import axios from 'axios'
-    export default {
-        data() {
-            return {
-                cpu_form: {
-                    name: '',
-                    core: '',
-                    cpu_clock: '',
-                    socket: '',
-                    threads: '',
-                    tdp: '',
-                    nm: '',
-                    price: '',
-                },
-                image: {}
-
-            }
-        },
-        methods: {
-        updatePhoto(e) {
-            this.image = e
-        },
-        async sendToServer() {
-            try {
-
-                var formData = new FormData()
-                formData.append('image', this.image)
-                formData.append('request', JSON.stringify(this.cpu_form))
-                var headers = { 'Content-Type': 'multipart/form-data' }
-                await axios.post('http://localhost:8000/cpu_item/123/', formData, {headers: headers}).then((res) => {
-                console.log(res)
-            })
-            } catch (error) {
-                alert(error)
-            }
+import MyHeader from './components/MyHeader.vue'
+import MyFooter from './components/MyFooter.vue'
+import CpuContent from './components/CpuContent.vue';
+export default {
+    components: {
+    MyHeader,
+    MyFooter,
+    CpuContent
+},
+    data() {
+        return {
+            
         }
+    },
+    methods: {
+        
     }
 }
-
 </script>
 
 <style>
-.send_cpu input {
-    display: block;
-    width: 300px;
-    height: 40px;
-    margin: 20px;
-}
-
-.btn {
-    height: 30px;
-    margin-left: 20px;
-}
+*{padding: 0;margin: 0;border: 0;}
+*,*:before,*:after{-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+nav,footer,header,aside{display: block;}
+html,body{height:100%;width:100%;font-size:100%;line-height:1;font-size:14px;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+input,button,textarea{font-family:inherit;}
+input::-ms-clear{display: none;}
+button{cursor: pointer; background: transparent;}
+button::-moz-focus-inner{padding:0;border:0;}
+a,a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
 </style>

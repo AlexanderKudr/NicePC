@@ -1,7 +1,7 @@
 !<template>
     <div>
         <div class="cpu_item">
-            <img class="cpu_picture" src="../resoures/cpu_image_dev.png" alt="">
+            <img class="cpu_picture" src="{{ cpu_item.cpu_image }}" alt="">
 			<a  class="cpu_name" href="">
                 {{ cpu_item.name }}
 			</a>
@@ -26,6 +26,11 @@
 <script>
 
 export default {
+    data() {
+        return {
+            
+        }  
+    },
     props: {
         cpu_item: {
             type: Object,
