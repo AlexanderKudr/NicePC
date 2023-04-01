@@ -52,3 +52,4 @@ class DbCpuItem(Base):
     tdp = Column(String)
     nm = Column(String)
     price = Column(String)
+    cpu_image = Column(String)

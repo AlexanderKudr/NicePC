@@ -4,7 +4,7 @@ from db.models import DbCpuItem
 from fastapi import HTTPException, status
 
 
-def create_cpu(db: Session, request: CpuItemBase):
+def create_cpu(db: Session, request: CpuItemBase, path):
     new_cpu = DbCpuItem(
         name = request.name,
         core = request.core,
@@ -13,7 +13,8 @@ def create_cpu(db: Session, request: CpuItemBase):
         threads = request.threads,
         tdp = request.tdp,
         nm = request.nm,
-        price = request.price
+        price = request.price,
+        cpu_image = path
     )
     db.add(new_cpu)
     db.commit()
