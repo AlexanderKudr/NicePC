@@ -28,7 +28,7 @@
 export default {
     data() {
         return {
-            
+
         }  
     },
     props: {
@@ -100,38 +100,11 @@ export default {
     padding: 0px 20px;
     font-size: 16px;
     line-height: 20px;
-    margin: 0px;
-    box-sizing: border-box;
-    outline: 0px;
-    font-style: inherit;
-    font-variant: inherit;
-    font-stretch: inherit;
-    font-family: inherit;
-    font-size-adjust: inherit;
-    font-kerning: inherit;
-    font-optical-sizing: inherit;
-    font-language-override: inherit;
-    font-feature-settings: inherit;
-    font-variation-settings: inherit;
-    text-decoration: none;
-    white-space: nowrap;
-    appearance: none;
-    overflow: hidden;
-    cursor: pointer;
     width: 100%;
-    -moz-box-pack: center;
-    justify-content: center;
-    -moz-box-align: center;
-    align-items: center;
-    position: relative;
     border-radius: 6px;
     border: 1px solid transparent;
     text-align: center;
-    transition-property: color, font-weight, border-bottom-color;
-    transition-duration: 150ms;
-    transition-timing-function: ease-in-out;
-    background-color: rgb(176, 176, 176);
-    color: rgb(255, 255, 255);
-    font-weight: 500;
+    background-color: rgba(128, 0, 128, 0.5);
+    color: white;
 }
 </style>
