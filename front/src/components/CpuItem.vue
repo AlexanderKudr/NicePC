@@ -1,7 +1,7 @@
 !<template>
     <div>
         <div class="cpu_item">
-            <img class="cpu_picture" src="{{ cpu_item.cpu_image }}" alt="">
+            <img class="cpu_picture" :src="path+cpu_item.cpu_image" alt="">
 			<a  class="cpu_name" href="">
                 {{ cpu_item.name }}
 			</a>
@@ -28,7 +28,7 @@
 export default {
     data() {
         return {
-
+            path: 'http://127.0.0.1:8000/'
         }  
     },
     props: {
