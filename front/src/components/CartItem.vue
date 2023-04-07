@@ -5,11 +5,8 @@
 </template>
 
 <script>
-import CartItem from "@/components/CartItem.vue"
     export default {
-        components:{
-            CartItem
-        }
+        
     }
 </script>
 
