@@ -1,7 +1,7 @@
 <template>
     <div class="catalog_body">
-        <a class="catalog_categories" href="cpu.html">
-            <img class="img_body" src="../resoures/6028061696.jpg" alt="">
+        <a class="catalog_categories" href="cpu">
+            <img class="img_body" src="../resoures/cpu_image_dev.png" alt="">
             <br> Процессоры
         </a>
         <a class="catalog_categories" href="">

@@ -1,29 +1,13 @@
 !<template>
     <div class="app">
-        <my-header/>
-        <cpu-content/>
-        <my-footer/>
+        <router-view></router-view>
     </div>
 </template>
 
 <script>
-import MyHeader from './components/MyHeader.vue'
-import MyFooter from './components/MyFooter.vue'
-import CpuContent from './components/CpuContent.vue';
+
 export default {
-    components: {
-    MyHeader,
-    MyFooter,
-    CpuContent
-},
-    data() {
-        return {
-            
-        }
-    },
-    methods: {
-        
-    }
+
 }
 </script>
 

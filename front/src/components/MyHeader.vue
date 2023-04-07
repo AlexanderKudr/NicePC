@@ -13,7 +13,7 @@
         </modal>
 		<div class="header_all_info">
 			<div class="logo">
-				<a class="function" href="#">
+				<a class="function" href="/">
 					NicePC
 					<p class="wtf">лучшее для вас</p>
 				</a>
@@ -67,7 +67,7 @@
 </template>
 
 <script>
-	import Modal from './Modal.vue'
+	import Modal from '@/components/Modal.vue'
     import axios from 'axios'
     export default {
     components: {
