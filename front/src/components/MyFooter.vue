@@ -14,6 +14,7 @@
 				<button>
 					<a class="footter_sup" href="">Задать вопрос</a>
 				</button>
+				<div class="add_cpu"><a href="/add_cpu">admin add cpu</a></div>
 			</div>
 			<div class="footer_info">
 				<ul class="footer_ul_info">
@@ -90,5 +91,11 @@
     color: orange;
 }
 
+.add_cpu {
+	padding-top: 10px;
+}
 
+.add_cpu a {
+	color: rgba(128, 0, 128, 0.5);
+}
 </style>

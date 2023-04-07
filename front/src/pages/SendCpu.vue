@@ -63,6 +63,7 @@ import axios from 'axios'
     width: 300px;
     height: 40px;
     margin: 20px;
+    border: 1px solid black;
 }
 
 .btn {

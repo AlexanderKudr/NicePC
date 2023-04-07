@@ -1,5 +1,6 @@
 import Index from "@/pages/Index.vue"
 import Cpu from "@/pages/Cpu.vue"
+import SendCpu from "@/pages/SendCpu.vue"
 import { createRouter, createWebHashHistory, createWebHistory } from "vue-router"
 
 const routes = [
@@ -10,6 +11,10 @@ const routes = [
     {
         path: '/cpu',
         component: Cpu
+    },
+    {
+        path: '/add_cpu',
+        component: SendCpu
     }
 ]
 
