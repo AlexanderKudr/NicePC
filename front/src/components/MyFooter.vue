@@ -15,6 +15,7 @@
 					<a class="footter_sup" href="">Задать вопрос</a>
 				</button>
 				<div class="add_cpu"><a href="/add_cpu">admin add cpu</a></div>
+				<div class="store_test">{{ $store.state.isAuth }}</div>
 			</div>
 			<div class="footer_info">
 				<ul class="footer_ul_info">
