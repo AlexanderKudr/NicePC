@@ -6,10 +6,13 @@ from db.models import DbUser
 from db.hashing import Hash
 from auth.oauth2 import create_access_token
 
+# for crutch, not using for now
+from routers.schemas import UserLogin
 
 router = APIRouter(
     tags=['authentication']
 )
+
 
 @router.post('/login')
 def login(request: OAuth2PasswordRequestForm = Depends(), db: Session = Depends(get_db)):

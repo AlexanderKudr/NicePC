@@ -56,19 +56,20 @@
 			</div>
 			<div class="catalog_cart">
 				<ul>
-					<li><button @click="showDialog" class="login_cart">{{ username }}</button></li>
+					<li><button @click="showDialog" class="login_cart">Войти</button></li>
+                    <li><button @click="tryLogout" class="login_cart">Выйти</button></li>
 					<li><a class="cart" href="">Избранное</a></li>
 					<li><a class="cart" href="">Сравнение</a></li>
 					<li><a class="cart" href="">Корзина</a></li>
 				</ul>	
 			</div>
 		</div>
+        <div class="test_token">{{ this._token }}</div>
 	</header>
 </template>
 
 <script>
 	import Modal from '@/components/Modal.vue'
-    import axios from 'axios'
     export default {
     components: {
     Modal
@@ -80,34 +81,41 @@
                 username: '',
                 password: '',
             },
-            username: 'Войти'
+            _token: `Token: ${localStorage.getItem('token')}`
+
 
         }
     },
     methods: {
         showDialog() {
         this.dialogVisible = true
-    },
-    async tryLogin(post) {
-        this.dialogVisible = false
-        try {
-            var qs = require('qs')
-            await axios.post('http://127.0.0.1:8000/login', qs.stringify({'username': this.loginForm.username, 'password': this.loginForm.password})).then((res) => {
-            this.username = res.data.username
-            this.loginForm = {
-                username: '',
-                password: '',
-            }
-          })
-        } catch (error) {
-            alert('Error while posting to API')
-        }
         },
+        tryLogin() {
+            this.dialogVisible = false
+            this.$store.dispatch('AuthModule/onLogin', {
+                login: this.loginForm.username,
+                password: this.loginForm.password
+            })
+                .then(() => {
+                    location.reload()
+                })
+        },
+        tryLogout() {
+            this.$store.dispatch('AuthModule/onLogout')
+                .then(() => {
+                    location.reload()
+                })
+        }
     }
 }
 </script>
 
 <style>
+.test_token {
+    margin-top: 20px;
+    margin-left: 200px;
+}
+
 .logo a {
     background: url('../resoures/1036686.png') left no-repeat;
     background-size: 35px 35px;

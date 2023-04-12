@@ -69,3 +69,7 @@ class CpuItemBase(BaseModel):
     tdp: str
     nm: str
     price: str
+
+class UserLogin(BaseModel):
+    username: str
+    password: str
