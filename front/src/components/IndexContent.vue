@@ -58,7 +58,7 @@
     grid-template-columns: repeat(5, 1fr);
     gap: 10px;
     padding: 100px 200px;
-	 color: blanchedalmond;
+	 color: rgb(76, 0, 255);
 }
 
 .img_body{
