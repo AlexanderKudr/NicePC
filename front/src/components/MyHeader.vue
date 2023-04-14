@@ -64,7 +64,7 @@
 				</ul>	
 			</div>
 		</div>
-        <div class="test_token">{{ this._token }}</div>
+        <div class="test_token">{{ this.localStorageToken }}</div>
 	</header>
 </template>
 
@@ -81,9 +81,7 @@
                 username: '',
                 password: '',
             },
-            _token: `Token: ${localStorage.getItem('token')}`
-
-
+            localStorageToken: `localStorage: ${localStorage.getItem('token')}`
         }
     },
     methods: {
