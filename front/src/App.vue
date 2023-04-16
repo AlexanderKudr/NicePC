@@ -31,6 +31,11 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
     font-family: 'Montserrat', sans-serif;
 }
 
+body{
+    margin-left: 196px;
+    margin-right: 196px;
+}
+
 a{
     color:black;
 }

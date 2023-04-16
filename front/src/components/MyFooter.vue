@@ -58,7 +58,7 @@
     display: flex;
     color: rgb(0, 0, 0);
     justify-content: space-between;
-	padding: 40px 200px;
+	padding-top: 40px ;
 }
 .footer_ul_info{
   font-family: "PT Root UI5", sans-serif;

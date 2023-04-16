@@ -6,7 +6,7 @@
 
 <script>
 import axios from 'axios';
-import CpuItem from './CpuItem.vue';
+import CpuItem from '@/components/Cpu/CpuItem.vue';
     export default {
         components: {
             CpuItem

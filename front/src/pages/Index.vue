@@ -7,7 +7,7 @@
 <script>
 import MyHeader from '@/components/MyHeader.vue'
 import MyFooter from '@/components/MyFooter.vue'
-import IndexContent from '@/components/IndexContent.vue'
+import IndexContent from '@/components/Index/IndexContent.vue'
 
 export default {
     components: {

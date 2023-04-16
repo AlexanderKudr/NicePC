@@ -117,7 +117,6 @@
 <style>
 .test_token {
     margin-top: 20px;
-    margin-left: 200px;
 }
 
 .logo a {
@@ -137,7 +136,7 @@
 .header_all_info {
     display: flex;
     justify-content: space-between;
-    padding: 40px 200px;
+    padding-top: 40px;
 }
 
 .info_block ul {

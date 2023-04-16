@@ -7,7 +7,7 @@
 <script>
 import MyHeader from '@/components/MyHeader.vue'
 import MyFooter from '@/components/MyFooter.vue'
-import CpuContent from '@/components/CpuContent.vue';
+import CpuContent from '@/components/Cpu/CpuContent.vue';
 export default {
     components: {
     MyHeader,

@@ -9,7 +9,7 @@
 <script>
 import MyHeader from '@/components/MyHeader.vue';
 import MyFooter from '@/components/MyFooter.vue';
-import CartContent from '@/components/CartContent.vue';
+import CartContent from '@/components/Cart/CartContent.vue';
     export default {
         components:{
             MyHeader,

@@ -1,4 +1,4 @@
-!<template>
+<template>
     <div>
         <div class="cpu_item">
             <img class="cpu_picture" :src="path+cpu_item.cpu_image" alt="">
