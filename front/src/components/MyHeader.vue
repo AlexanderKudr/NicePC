@@ -13,7 +13,7 @@
         </modal>
 		<div class="header_all_info">
 			<div class="logo">
-				<a class="function" href="/">
+				<a href="/">
 					NicePC
 					<p class="wtf">лучшее для вас</p>
 				</a>
@@ -26,31 +26,18 @@
 					<option value="">Саратов</option>
 					<option value="">Калуга</option>
 				</select>
-				<a class="function">+7(981)459-09-38</a>
+				<a>+7(981)459-09-38</a>
 			</div>
 			<div class="info_block">
 				<ul class="menu_link">
-					<li class="link"><a class="function" href="">Журнал</a></li>
-					<li class="link"><a class="function" href="">Конфигуратор</a></li>
-					<li class="link"><a class="function" href="">Магазины</a></li>
-					<li class="link"><a class="function" href="">Обратная связь</a></li>
+					<li class="link"><a href="">Журнал</a></li>
+					<li class="link"><a href="">Конфигуратор</a></li>
+					<li class="link"><a href="">Магазины</a></li>
+					<li class="link"><a href="">Обратная связь</a></li>
 				</ul>
 			</div>
 		</div>
 		<div class="catalog">
-			<div class="catalog_menu">
-				<select name="Каталог" class="catalog_menu_select">
-					<a href=""><option value="">Материнские платы</option></a>
-					<option value=""><a href="">Оперативная память</a></option>
-					<option value="">Видеокарты</option>
-					<option value="">Блоки питания</option>
-					<option value="">Корпусы</option>
-					<option value="">Процессоры</option>
-					<option value="">Системы охлаждения процессора</option>
-					<option value="">Системы охлаждения корпуса</option>
-					<option value="">Термопасты</option>
-				</select>
-			</div>
 			<div class="catalog_search">
 				<input class="input_search" type="text" placeholder="Поиск по комплектующим">
 			</div>
@@ -58,9 +45,9 @@
 				<ul>
 					<li v-if="localStorageToken === null"><button @click="showDialog">Войти</button></li>
                     <li v-if="localStorageToken !== null"><button @click="showDropdown">{{ this.localStorageUsername }}</button></li>
-					<li><a class="cart" href="">Избранное</a></li>
-					<li><a class="cart" href="">Сравнение</a></li>
-					<li><a class="cart" href="cart">Корзина</a></li>
+					<li><a href="">Избранное</a></li>
+					<li><a href="">Сравнение</a></li>
+					<li><a href="cart">Корзина</a></li>
 				</ul>
                 <div class="dropdown_content" v-if="dropdownVisible">
                     <div class="dropdown_info">
@@ -155,6 +142,14 @@ a:visited {
     color :black;
 }
 
+a:hover {
+    color: rgba(128, 0, 128, 0.5);
+}
+
+button:hover {
+    color: rgba(128, 0, 128, 0.5);
+}
+
 * {
     font-family: 'Montserrat', sans-serif;
 }
@@ -169,10 +164,6 @@ a:visited {
     display: flex;
     justify-content: space-between;
     gap: 20px;
-}
-
-.function:hover {
-    color: orange;
 }
 
 .choose_number {
@@ -202,14 +193,6 @@ a:visited {
     box-shadow: 0px 15px 10px -15px rgba(127, 190, 213, 0.93);
 }
 
-
-.catalog_menu_select {
-    padding: 20px 0;
-    border: 1px solid black;
-    border-radius: 10px;
-    font-size: 16px;
-}
-
 .catalog_cart {
     padding-top: 45px;
 }
@@ -221,16 +204,11 @@ a:visited {
     align-items: center;
 }
 
-.cart:hover {
-    color: orange;
-}
-
 .myform_title {
     margin: 0 auto;
     font-size: 20px;
     margin-bottom: 70px;
 }
-
 
 .inputbox {
     border: 1px solid rgba(0, 0, 0, 0.5);
@@ -294,13 +272,5 @@ a:visited {
 
 .dropdown_info li button {
     font-size: 20px;
-}
-
-.dropdown_info li a:hover {
-    color: orange;
-}
-
-.dropdown_info li button:hover {
-    color: orange;
 }
 </style>

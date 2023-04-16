@@ -72,10 +72,6 @@
     cursor: pointer;
 }
  
-.footter_sup:hover {
-    color: orange;
-}
-
 .footer_ul_docs{
     list-style: none;
     color: rgb(0, 0, 0);
@@ -85,10 +81,6 @@
     text-decoration: none;
     color: rgb(0, 0, 0);
     cursor: pointer;
-}
-
-.footter_docs:hover{
-    color: orange;
 }
 
 .add_cpu {
