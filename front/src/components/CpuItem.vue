@@ -56,6 +56,7 @@ export default {
     background-color: white;
     border-bottom: 1px solid rgb(223, 223, 225);
     transition: all 0.3s ease 0s;
+    z-index: -1;
   }
 .cpu_item:hover{
     box-shadow: 0 0 10px rgb(187, 187, 187);
