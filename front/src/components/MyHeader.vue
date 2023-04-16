@@ -152,7 +152,6 @@
 .catalog {
     display: flex;
     justify-content: space-between;
-    padding: 0 200px;
     position: sticky;
     top: 10px;
 }

@@ -51,8 +51,6 @@ export default {
     "image . description description order   ";
     padding: 20px 30px 30px;
     margin-top: 30px;
-    margin-left: 196px;
-    margin-right: 196px;
     background-color: white;
     border-bottom: 1px solid rgb(223, 223, 225);
     transition: all 0.3s ease 0s;
