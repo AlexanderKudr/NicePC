@@ -27,4 +27,23 @@ a:hover{text-decoration: none;}
 ul li{list-style: none;}
 img{vertical-align: top;}
 h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+a{
+    color:black;
+}
+
+a:visited {
+    color :black;
+}
+
+a:hover {
+    color: rgba(128, 0, 128, 0.5);
+}
+
+button:hover {
+    color: rgba(128, 0, 128, 0.5);
+}
 </style>

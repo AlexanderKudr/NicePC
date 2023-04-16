@@ -134,26 +134,6 @@
     font-size: 12px;
 }
 
-a{
-    color:black;
-}
-
-a:visited {
-    color :black;
-}
-
-a:hover {
-    color: rgba(128, 0, 128, 0.5);
-}
-
-button:hover {
-    color: rgba(128, 0, 128, 0.5);
-}
-
-* {
-    font-family: 'Montserrat', sans-serif;
-}
-
 .header_all_info {
     display: flex;
     justify-content: space-between;

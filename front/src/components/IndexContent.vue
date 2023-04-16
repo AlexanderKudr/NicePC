@@ -58,30 +58,10 @@
     grid-template-columns: repeat(5, 1fr);
     gap: 10px;
     padding: 100px 200px;
-	 color: rgb(76, 0, 255);
 }
 
 .img_body{
     width: 180px;
     height: 140px;
-}
-
-.button_catalog{
-    background-color: #ffffff; 
-    border: 2px solid rgb(255, 166, 0);
-    color: rgb(255, 166, 0);
-    padding: 10px 24px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 12px;
-    border-radius: 4px;
-    -webkit-transition-duration: 0.4s; 
-    transition-duration: 0.4s;
-    cursor: pointer;
-}
-
-.catalog_categories:hover {
-    color: orange;
 }
 </style>
