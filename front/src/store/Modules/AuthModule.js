@@ -1,13 +1,11 @@
 import axios from "axios"
 
-export const AuthModule = {
-    namespaced: true,
-
-
+export default {
     state() {
         return {
             credentials: {
                 token: localStorage.getItem('token') || null,
+                username: localStorage.getItem('username') || null
                 // userRole: localStorage.getItem('userRole') || userRoles.Guest
             }
         }
@@ -22,6 +20,11 @@ export const AuthModule = {
             localStorage.setItem('token', token)
         },
 
+        setUsername(state, username) {
+            state.credentials.username = username
+            localStorage.setItem('username', username)
+        },
+
         // setUserRole(state, userRole) {
         //     state.credentials.userRole = userRole
         //     localStorage.setItem('userRole', userRole)
@@ -30,6 +33,11 @@ export const AuthModule = {
         deleteToken(state) {
             state.credentials.token = null
             localStorage.removeItem('token')
+        },
+
+        deleteUsername(state) {
+            state.credentials.username = null
+            localStorage.removeItem('username')
         },
 
         // deleteUserRole(state) {
@@ -43,6 +51,7 @@ export const AuthModule = {
             var qs = require('qs')
             await axios.post('http://127.0.0.1:8000/login', qs.stringify({'username': login, 'password': password})).then((res) => {
                 commit('setToken', res.data.access_token)
+                commit('setUsername', res.data.username)
                 // commit('setUserRole', res.userRole)
                 axios.defaults.headers.common['authorization'] = `Bearer ${res.data.access_token}`
             })
@@ -51,6 +60,7 @@ export const AuthModule = {
 
         onLogout({commit}) {
             commit('deleteToken')
+            commit('deleteUsername')
             // commit('deleteUserRole')
         }
     }

@@ -56,20 +56,30 @@
 			</div>
 			<div class="catalog_cart">
 				<ul>
-					<li><button @click="showDialog" class="login_cart">Войти</button></li>
-                    <li><button @click="tryLogout" class="login_cart">Выйти</button></li>
+					<li v-if="localStorageToken === null"><button @click="showDialog">Войти</button></li>
+                    <li v-if="localStorageToken !== null"><button @click="showDropdown">{{ this.localStorageUsername }}</button></li>
 					<li><a class="cart" href="">Избранное</a></li>
 					<li><a class="cart" href="">Сравнение</a></li>
 					<li><a class="cart" href="">Корзина</a></li>
-				</ul>	
+				</ul>
+                <div class="dropdown_content" v-if="dropdownVisible">
+                    <div class="dropdown_info">
+                        <ul>
+                            <li><a href="#">Мой профиль</a></li>
+                            <li><a href="#">Заказы</a></li>
+                            <li><button @click="tryLogout">Выйти</button></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="dropdown" v-if="dropdownVisible" @click="hideDropdown"></div>
 			</div>
 		</div>
-        <div class="test_token">{{ this.localStorageToken }}</div>
 	</header>
 </template>
 
 <script>
 	import Modal from '@/components/Modal.vue'
+
     export default {
     components: {
     Modal
@@ -77,20 +87,29 @@
     data() {
         return {
             dialogVisible: false,
+            dropdownVisible: false,
             loginForm: {
                 username: '',
                 password: '',
             },
-            localStorageToken: `localStorage: ${localStorage.getItem('token')}`
+            localStorageToken: localStorage.getItem('token'),
+            localStorageUsername: localStorage.getItem('username'),
+            upHere: false
         }
     },
     methods: {
         showDialog() {
         this.dialogVisible = true
         },
+        showDropdown() {
+            this.dropdownVisible = true
+        },
+        hideDropdown() {
+            this.dropdownVisible = false
+        },
         tryLogin() {
             this.dialogVisible = false
-            this.$store.dispatch('AuthModule/onLogin', {
+            this.$store.dispatch('onLogin', {
                 login: this.loginForm.username,
                 password: this.loginForm.password
             })
@@ -99,12 +118,12 @@
                 })
         },
         tryLogout() {
-            this.$store.dispatch('AuthModule/onLogout')
+            this.$store.dispatch('onLogout')
                 .then(() => {
                     location.reload()
                 })
         }
-    }
+    },
 }
 </script>
 
@@ -239,4 +258,49 @@ a:visited {
     font-size: 16px;
 }
 
+.dropdown {
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    z-index: 1;
+}
+
+.dropdown_content {
+    position: absolute;
+    width: 300px;
+    height: 350px;
+    border: 1px solid white;
+    border-radius: 25px;
+    background-color: white;
+    margin-top: 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+}
+
+.dropdown_info {
+    margin-top: 50px;
+    margin-left: 40px;
+}
+
+.dropdown_info ul {
+    display: block;
+}
+.dropdown_info li {
+    font-size: 20px;
+    padding-bottom: 20px;
+}
+
+.dropdown_info li button {
+    font-size: 20px;
+}
+
+.dropdown_info li a:hover {
+    color: orange;
+}
+
+.dropdown_info li button:hover {
+    color: orange;
+}
 </style>
