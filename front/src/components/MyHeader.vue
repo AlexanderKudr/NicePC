@@ -60,7 +60,7 @@
                     <li v-if="localStorageToken !== null"><button @click="showDropdown">{{ this.localStorageUsername }}</button></li>
 					<li><a class="cart" href="">Избранное</a></li>
 					<li><a class="cart" href="">Сравнение</a></li>
-					<li><a class="cart" href="">Корзина</a></li>
+					<li><a class="cart" href="cart">Корзина</a></li>
 				</ul>
                 <div class="dropdown_content" v-if="dropdownVisible">
                     <div class="dropdown_info">
