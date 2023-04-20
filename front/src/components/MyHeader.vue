@@ -157,7 +157,7 @@
 }
 
 .catalog_search {
-    margin-left: 93px;
+    margin-left: 393px;
     padding-top: 22px;
 }
 
