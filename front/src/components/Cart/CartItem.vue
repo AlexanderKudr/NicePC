@@ -1,16 +1,21 @@
 <template>
     <h2>Корзина</h2>
     <div class="cart_item">
+        <div class="items">
         <div class="product">
             <img src="@/resoures/intelcore_i5-10400f.jpg" alt="">
-            <a class="name" href="">Intel Core i5 12400F</a>
-            <a class="price" href="">14 990₽</a>
+            <p class="name" href="">Intel Core i5 12400F</p>
+            <p class="price" href="">14 990₽</p>
+            <button class="tooltip">
+                <img src="@/resoures/delete_button.svg" alt="">
+            </button>
         </div>
+    </div>
         <div class="buy">
             <p class="text1">В корзине</p> 
             <p class="text2">1 товар</p>
             <p class="text3">14 990₽</p>
-            <button class="delete">К оформлению</button>
+            <button class="buying">К оформлению</button>
             <button class="delete_all">Очистить корзину</button>
         </div>
     </div>
@@ -23,30 +28,43 @@
 </script>
 
 <style lang="scss">
-    h2{
-        margin-top: 10px;
-        margin-bottom: 20px;
-        font-size: 30px;
+    
+h2{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+.cart_item {
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    margin: 0 auto;
+
+    .items {
+        grid-column: auto / span 4;
     }
-    .cart_item {
+
+    .product {
         display: grid;
-        grid-template-columns: repeat(5,1fr);
-        margin: 0 auto;
-        .product {
-            display: grid;
-            grid-template-columns: min-content 7fr 4fr min-content;
-            grid-template-areas:
-                "image title  status  actions" 
-                "image delivery status  actions" 
-                ".   marked   marked  .    " 
-                ".   content  content .    ";
-            font-size: 20px;
-            grid-column: auto / span 4;
-            img {
-                grid-area: image;
-                width: 100px;
-            }
+        grid-template-columns: min-content 7fr 4fr min-content;
+        grid-template-areas:
+            "image title  status  actions" 
+            "image delivery status  actions" 
+            ".   marked   marked  .    " 
+            ".   content  content .    ";
+        font-size: 20px;
+        margin-bottom: 90px;
+
+        .tooltip img {
+        width: 30px;
+        height: 30px;
         }
+            
+        img {
+            grid-area: image;
+            width: 100px;
+        }
+    }
     
     .buy{
         font-size: 20px;
@@ -55,31 +73,35 @@
         grid-column: auto / span 1;
         background-color: rgba(202, 202, 202, 0.5);
         flex-direction: column;
+
         .text2{
             margin-top: 5px;
         }
+
         .text3{
             margin-top: 20px;
         }
-        .delete{
+
+        .buying{
             height: 40px;
             margin-top: 20px;
             border-radius: 5px;
             background-color: rgba(128, 0, 128, 0.5);
         }
-        .delete:hover{
+
+        .buying:hover{
             color: white;
         }
         
-    }
-    .delete_all{
+        .delete_all{
             height: 40px;
-            margin-top: 20px;
             border-radius: 5px;
+            margin-top: 20px;
             background-color: rgba(128, 0, 128, 0.5);
         }
-    .delete_all:hover{
-        color: white;
+        .delete_all:hover{
+            color: white;
+        }
     }
-    }
+}
 </style>
