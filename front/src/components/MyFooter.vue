@@ -2,7 +2,7 @@
     <footer>
 		<div class="footer">
 			<div class="footer_contacts">
-				<h1>Контакты</h1>
+				<h2>Контакты</h2>
 				<a class="footter_sup" href="">Адреса магазинов</a><br>
 				<a class="footter_sup" href="">+7(981)459-09-38</a>
 				<select class="city_change" name="" id="">Выбор города
@@ -46,38 +46,40 @@
 </script>
 
 <style>
-.footer_info{
+.footer_info {
     display: flex;
     margin-left: 40px;
 }
-.footer_support{
+.footer_support {
     margin-left:120px;
     list-style: none
 }
-.footer{
+.footer {
+	bottom: 0;
+	padding-bottom: 10px;
     display: flex;
-    color: rgb(0, 0, 0);
     justify-content: space-between;
-	padding-top: 40px ;
+	color: rgb(0, 0, 0);
+	position: fixed;
 }
 .footer_ul_info{
   font-family: "PT Root UI5", sans-serif;
   list-style: none;
   color: rgb(0, 0, 0);
 }
-.footter_sup{
+.footter_sup {
     text-decoration: none;
     color: rgb(0, 0, 0);
     font-weight: 440;
     cursor: pointer;
 }
  
-.footer_ul_docs{
+.footer_ul_docs {
     list-style: none;
     color: rgb(0, 0, 0);
     
 }
-.footter_docs{
+.footter_docs {
     text-decoration: none;
     color: rgb(0, 0, 0);
     cursor: pointer;
