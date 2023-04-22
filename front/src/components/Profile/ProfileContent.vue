@@ -15,7 +15,7 @@
                 <div v-if="isOrdersShowen">
                     <ul class="orders_dropdown">
                         <li><a href="#">Заказы</a></li>
-                        <li><a href="#">Корзина</a></li>
+                        <li><a href="cart">Корзина</a></li>
                         <li><a href="#">Избранное</a></li>
                     </ul>
                 </div>
@@ -25,6 +25,15 @@
             </div>
         </div>
         <div class="profile_info">
+            <div class="profile_info_title">
+                Профиль
+            </div>
+            <div class="profile_info_main">
+                <img class="profile_info_avatar" :src="path+'83577273.jpg'" alt="">
+                <div>
+                    Никита
+                </div>
+            </div>
 
         </div>
         <div class="bonuses">
@@ -34,7 +43,7 @@
 </template>
 
 <script>
-
+    import axios from 'axios';
     export default {
         components:{
             
@@ -42,25 +51,36 @@
         data() {
             return {
                 isOrdersShowen: false,
-                //
+                path: 'http://127.0.0.1:8000/images/avatar/'
             }
         },
         methods: {
             showOrders() {
                 this.isOrdersShowen = !this.isOrdersShowen
-            }
+            },
+
+            // async fetchProfileInfo() {
+            //     try {
+            //         await axios.get('http://127.0.0.1:8000/cpu_item/').then((res) => {
+            //         this.cpu_items = res.data
+            //         })
+            //     } 
+            //     catch (error) {
+            //         alert('Error while posting to API')
+            //     }
+            // }
         },
     }
 </script>
 
 <style>
 .profile_root {
-    padding-top: 100px;
-    height: 500px;
+    display: flex;
+    padding-top: 50px;
 }
 
 .side_bar {
-    
+    width: 500px;
 }
 
 .side_bar_item {
@@ -93,7 +113,22 @@
     padding-bottom: 10px;
 }
 
-.profile_info {
+.profile_info_main{
+    padding-top: 100px;
+    display: flex;
+    font-size: 20px;
+    border-bottom: 1px solid rgb(0, 0, 0, 0.3);
+}
+
+.profile_info_title {
+    font-size: 30px;
+}
+
+.profile_info_avatar {
+    border: 0px solid white;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
 
 }
 

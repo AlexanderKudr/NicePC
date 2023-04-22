@@ -19,7 +19,7 @@ def create_cpu_item(request: str = Form(), image: UploadFile = File(...), db: Se
         item = CpuItemBase.parse_obj(json.loads(request))
     except :
         raise HTTPException(status_code=422, detail='kostyl pizdes')
-    path = f'images/{image.filename}'
+    path = f'images/cpu/{image.filename}'
     with open(path, 'wb+') as buffer:
         shutil.copyfileobj(image.file, buffer)
     return db_cpu_item.create_cpu(db, item, path)
