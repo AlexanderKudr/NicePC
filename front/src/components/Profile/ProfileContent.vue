@@ -5,8 +5,10 @@
                 <a href="profile">Мой профиль</a>
             </div>
             <div class="side_bar_item">
-                <img class="svg_arrow" v-if="isOrdersShowen" src="@/components/Profile/arrow-down.svg" alt="">
-                <img class="svg_arrow" v-if="!isOrdersShowen" src="@/components/Profile/arrow-right.svg" alt="">
+                <div class="svg_arrow_div">
+                    <img class="svg_arrow" v-if="isOrdersShowen" src="@/components/Profile/arrow-down.svg" alt="">
+                    <img class="svg_arrow" v-if="!isOrdersShowen" src="@/components/Profile/arrow-right.svg" alt="">
+                </div>
                 <button @click="showOrders">
                     Заказы
                 </button>
@@ -70,18 +72,22 @@
     font-size: 18px;
 }
 
-.svg_arrow{
+.svg_arrow_div {
+    position: absolute;
+    margin-left: -20px;
+}
+
+.svg_arrow {
     width: 20px;
     height: 20px;
-    margin-right: 20px;
-    position: absolute;
+
 }
 
 .orders_dropdown {
     padding-top: 15px;
 }
 
-.orders_dropdown li{
+.orders_dropdown li {
     padding-left: 10px;
     padding-bottom: 10px;
 }
