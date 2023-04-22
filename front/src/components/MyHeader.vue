@@ -52,7 +52,7 @@
                 <div class="dropdown_content" v-if="dropdownVisible">
                     <div class="dropdown_info">
                         <ul>
-                            <li><a href="#">Мой профиль</a></li>
+                            <li><a href="profile">Мой профиль</a></li>
                             <li><a href="#">Заказы</a></li>
                             <li><button @click="tryLogout">Выйти</button></li>
                         </ul>
