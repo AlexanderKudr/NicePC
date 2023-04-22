@@ -41,13 +41,18 @@
 			<div class="catalog_search">
 				<input class="input_search" type="text" placeholder="Поиск по комплектующим">
 			</div>
+
+            <svg class=" Icon Icon_size_m"><use href="#Wishlist"></use></svg>
+            <svg class=" Icon Icon_size_m"><use href="#Wishlist"></use></svg>
+
+
 			<div class="catalog_cart">
 				<ul>
-					<li v-if="localStorageToken === null"><button @click="showDialog">Войти</button></li>
-                    <li v-if="localStorageToken !== null"><button @click="showDropdown">{{ this.localStorageUsername }}</button></li>
-					<li><a href="">Избранное</a></li>
-					<li><a href="">Сравнение</a></li>
-					<li><a href="cart">Корзина</a></li>
+					<li class='login_ui' v-if="localStorageToken === null"><button @click="showDialog">Войти</button></li>
+                    <li class='login_ui' v-if="localStorageToken !== null"><button @click="showDropdown">{{ this.localStorageUsername }}</button></li>
+					<li class='favorites_ui'><a href="">Избранное</a></li>
+					<li class='compare_ui'><a href="">Сравнение</a></li>
+					<li class='cart_ui'><a href="cart">Корзина</a></li>
 				</ul>
                 <div class="dropdown_content" v-if="dropdownVisible">
                     <div class="dropdown_info">
@@ -120,7 +125,7 @@
 }
 
 .logo a {
-    background: url('../resoures/1036686.png') left no-repeat;
+    background: url('@/resoures/1036686.png') left no-repeat;
     background-size: 35px 35px;
     padding-left: 50px;
     display: block;
@@ -157,12 +162,12 @@
 }
 
 .catalog_search {
-    margin-left: 393px;
-    padding-top: 22px;
+    margin-left: 450px;
+    padding-top: 45px;
 }
 
 .input_search {
-    width: 30em;
+    width: 40em;
     height: 40px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
@@ -180,6 +185,34 @@
     justify-content: space-between;
     gap: 30px;
     align-items: center;
+}
+
+.login_ui {
+    padding-bottom: 25px;
+}
+
+.login_ui button {
+    background: url('@/resoures/user.svg') top no-repeat;
+    background-size: 18px 18px;
+    padding-top: 25px;
+}
+
+.favorites_ui a {
+    background: url('@/resoures/favorites.svg') top no-repeat;
+    background-size: 20px 20px;
+    padding-top: 25px;
+}
+
+.compare_ui a {
+    background: url('@/resoures/compare.svg') top no-repeat;
+    background-size: 20px 20px;
+    padding-top: 25px;
+}
+
+.cart_ui a {
+    background: url('@/resoures/cart.svg') top no-repeat;
+    background-size: 20px 20px;
+    padding-top: 25px;
 }
 
 .myform_title {
