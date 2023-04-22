@@ -55,15 +55,11 @@
     list-style: none
 }
 .footer {
-	bottom: 0;
-	padding-bottom: 10px;
     display: flex;
-    justify-content: space-between;
 	color: rgb(0, 0, 0);
-	position: fixed;
+	justify-content: space-between;
 }
 .footer_ul_info{
-  font-family: "PT Root UI5", sans-serif;
   list-style: none;
   color: rgb(0, 0, 0);
 }

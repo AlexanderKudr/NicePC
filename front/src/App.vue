@@ -34,6 +34,7 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
 body {
     padding-left: 150px;
     padding-right: 150px;
+    min-height: 100vh;
 }
 
 a{
