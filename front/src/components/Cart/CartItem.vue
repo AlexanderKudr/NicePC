@@ -1,6 +1,5 @@
 <template>
-    <p class="back"><a href="">Обратно к покупкам</a></p>
-    <h1>Корзина</h1>
+    <h2>Корзина</h2>
     <div class="cart_item">
         <div class="product">
             <img src="@/resoures/intelcore_i5-10400f.jpg" alt="">
@@ -24,10 +23,7 @@
 </script>
 
 <style lang="scss">
-    .back{
-        margin-top: 40px;
-    }
-    h1{
+    h2{
         margin-top: 10px;
         margin-bottom: 20px;
         font-size: 30px;
