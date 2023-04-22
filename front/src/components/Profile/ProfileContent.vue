@@ -75,11 +75,12 @@
 .svg_arrow {
     position: absolute;
     margin-left: -20px;
+    margin-top: 5px;
 }
 
 .svg_arrow img{
-    width: 20px;
-    height: 20px;
+    width: 10px;
+    height: 10px;
 
 }
 
