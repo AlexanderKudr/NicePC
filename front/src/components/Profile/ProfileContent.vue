@@ -131,8 +131,4 @@
     height: 100px;
 
 }
-
-.bonuses {
-
-}
 </style>
