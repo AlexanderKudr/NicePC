@@ -68,6 +68,7 @@
 
 .catalog_categories div {
     padding-top: 20px;
+    font-weight: 500;
 }
 
 .img_body{
