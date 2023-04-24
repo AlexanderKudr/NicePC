@@ -29,12 +29,7 @@
 				<a>+7(981)459-09-38</a>
 			</div>
 			<div class="info_block">
-				<ul class="menu_link">
-					<li class="link"><a href="">Журнал</a></li>
-					<li class="link"><a href="">Конфигуратор</a></li>
-					<li class="link"><a href="">Магазины</a></li>
-					<li class="link"><a href="">Обратная связь</a></li>
-				</ul>
+                Дипломный проект Гончеренко Владислава
 			</div>
 		</div>
 		<div class="catalog">
