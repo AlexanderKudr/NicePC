@@ -73,3 +73,7 @@ class CpuItemBase(BaseModel):
 class UserLogin(BaseModel):
     username: str
     password: str
+
+
+class Cart(BaseModel):
+    product_id: str

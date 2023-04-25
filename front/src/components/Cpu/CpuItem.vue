@@ -15,8 +15,8 @@
 				<li>Технологический процесс: {{ cpu_item.nm }}</li>
 			</ul>
 			<p class="cpu_price">{{ cpu_item.price }}₽
-			    <button class="cpu_button">
-				    В корзину
+                <button @click="addToCart" class="cpu_button">
+				    {{ cart_button }}
 			    </button>
             </p>
         </div>
@@ -24,17 +24,26 @@
 </template>
 
 <script>
-
+import axios from 'axios'
 export default {
     data() {
         return {
-            path: 'http://127.0.0.1:8000/'
+            path: 'http://127.0.0.1:8000/',
+            cart_button: 'В корзину'
         }  
     },
     props: {
         cpu_item: {
             type: Object,
             required: true,
+        }
+    },
+    methods: {  
+        async addToCart() {
+            this.cart_button = 'clicked'
+            await axios.post('http://127.0.0.1:8000/cart/', this.cpu_item.id).then((res) => {
+                    
+                })
         }
     }
 }
