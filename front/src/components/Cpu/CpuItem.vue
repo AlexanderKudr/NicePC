@@ -29,8 +29,6 @@
                     {{ cart_button }}
                 </button>
             </div>
-
-
         </div>
     </div>
 </template>
