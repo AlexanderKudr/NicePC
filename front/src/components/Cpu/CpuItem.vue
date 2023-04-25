@@ -1,26 +1,36 @@
 <template>
     <div>
-        <button @click="addToCart" class="cpu_button">
-				    {{ cart_button }}
-		</button>
         <div class="cpu_item">
-            
-            <img class="cpu_picture" :src="path+cpu_item.cpu_image" alt="">
-			<a  class="cpu_name" href="">
-                {{ cpu_item.name }}
-			</a>
-			<div class="css_line"></div>
-			<ul class="cpu_specifications">
-				<li>Ядро: {{ cpu_item.core }}</li>
-				<li>Частота: {{ cpu_item.cpu_clock }}</li>
-				<li>Число ядер: {{ cpu_item.threads }}</li>
-				<li>Сокет: {{ cpu_item.socket }}</li>
-				<li>Тепловыделение: {{ cpu_item.tdp }}</li>
-				<li>Технологический процесс: {{ cpu_item.nm }}</li>
-			</ul>
-			<p class="cpu_price">{{ cpu_item.price }}₽
-   
-            </p>
+            <div class="left-box">
+                <div>
+                    <img class="cpu_picture" :src="path+cpu_item.cpu_image" alt="">
+                </div>
+                <div>
+                    <div class="cpu_name">
+                        <a href="">
+                            {{ cpu_item.name }}
+                        </a>
+                    </div>
+                    <div class="css_line">
+                    </div>
+                    <ul class="cpu_specifications">
+                        <li>Ядро: {{ cpu_item.core }}</li>
+                        <li>Частота: {{ cpu_item.cpu_clock }}</li>
+                        <li>Число ядер: {{ cpu_item.threads }}</li>
+                        <li>Сокет: {{ cpu_item.socket }}</li>
+                        <li>Тепловыделение: {{ cpu_item.tdp }}</li>
+                        <li>Технологический процесс: {{ cpu_item.nm }}</li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <p class="cpu_price">{{ cpu_item.price }}₽</p>
+                <button @click="addToCart" class="cpu_button">
+                    {{ cart_button }}
+                </button>
+            </div>
+
+
         </div>
     </div>
 </template>
@@ -44,75 +54,62 @@ export default {
         async addToCart() {
             await axios.post('http://127.0.0.1:8000/cart/', {'product_id': this.cpu_item.id}, {headers: {'Authorization': `Bearer ${localStorage.getItem('token')}`}})
             .then((res) => {
-                    if (res.status === 200) {
-                        this.cart_button = 'Добавлено'
-                    }
-                })
+                if (res.status === 200) {
+                    this.cart_button = 'Добавлено'
+                }
+            })
         }
     }
 }
 </script>
 
 <style>
-.cpu_item{
-    position: relative;
-    display: grid;
-    grid-template-columns: 220px 52px auto 52px 239px;
-    grid-template-areas:
-    "image . header    .       controls" 
-    "image . separator   .       .     " 
-    "image . description description order   ";
-    padding: 20px 30px 30px;
-    margin-top: 30px;
-    background-color: white;
-    border-bottom: 1px solid rgb(223, 223, 225);
-    transition: all 0.3s ease 0s;
-    z-index: -1;
-  }
-.cpu_item:hover{
-    box-shadow: 0 0 10px rgb(187, 187, 187);
+
+.cpu_item {
+    
+    display: flex;
+    justify-content: space-between;
+    max-width: 1500px;
+    margin: 0 auto;
+    margin-bottom: 100px;
 }
 
-.cpu_specifications{
-    list-style: none;
-    grid-area: description;
-    font-size: 14px;
-    line-height: 18px;
+.left-box {
+    display: flex;
 }
-.cpu_name{
-    grid-area: header;
+
+.cpu_picture {
+    width: 200px;
+    height: 200px;
+    margin-right: 50px;
+}
+
+.cpu_name {
+    margin-bottom: 20px;
     font-size: 20px;
 }
+
 .css_line{
-    grid-area: separator;
-    width: 100%;
+    margin-bottom: 40px;
+    width: 400px;
     height: 1px;
-    background-color: rgb(245, 245, 246);
+    background-color: rgb(202, 202, 202);
+
 }
 
-.cpu_picture{
-    width: 250px;
-    height: 200px;
-    grid-area: image;
+.cpu_specifications li {
+    line-height: 20px;
 }
 
-.cpu_price{
-    font-size: 32px;
-    flex-wrap: wrap;
-    -moz-box-pack: end;
-    justify-content: flex-end;
-    align-self: flex-end;
-    gap: 8px;
-    grid-area: order;
-    padding-bottom: 40px;
+.cpu_price {
+    font-size: 25px;
+    margin-bottom: 20px;
 }
 
-.cpu_button{
+.cpu_button {
     height: 40px;
     padding: 0px 20px;
     font-size: 16px;
-    line-height: 20px;
-    width: 100%;
     border-radius: 6px;
     border: 1px solid transparent;
     text-align: center;
