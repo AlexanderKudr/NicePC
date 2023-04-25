@@ -92,7 +92,6 @@ export default {
     width: 400px;
     height: 1px;
     background-color: rgb(202, 202, 202);
-
 }
 
 .cpu_specifications li {
