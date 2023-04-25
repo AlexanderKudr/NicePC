@@ -54,6 +54,8 @@ export default {
                 commit('setUsername', res.data.username)
                 // commit('setUserRole', res.userRole)
                 axios.defaults.headers.common['Authorization'] = `Bearer ${res.data.access_token}`
+                
+
             })
 
         },

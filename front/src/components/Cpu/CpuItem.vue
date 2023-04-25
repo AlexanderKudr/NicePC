@@ -1,6 +1,10 @@
 <template>
     <div>
+        <button @click="addToCart" class="cpu_button">
+				    {{ cart_button }}
+		</button>
         <div class="cpu_item">
+            
             <img class="cpu_picture" :src="path+cpu_item.cpu_image" alt="">
 			<a  class="cpu_name" href="">
                 {{ cpu_item.name }}
@@ -15,9 +19,7 @@
 				<li>Технологический процесс: {{ cpu_item.nm }}</li>
 			</ul>
 			<p class="cpu_price">{{ cpu_item.price }}₽
-                <button @click="addToCart" class="cpu_button">
-				    {{ cart_button }}
-			    </button>
+   
             </p>
         </div>
     </div>
@@ -40,9 +42,11 @@ export default {
     },
     methods: {  
         async addToCart() {
-            this.cart_button = 'clicked'
-            await axios.post('http://127.0.0.1:8000/cart/', this.cpu_item.id).then((res) => {
-                    
+            await axios.post('http://127.0.0.1:8000/cart/', {'product_id': this.cpu_item.id}, {headers: {'Authorization': `Bearer ${localStorage.getItem('token')}`}})
+            .then((res) => {
+                    if (res.status === 200) {
+                        this.cart_button = 'Добавлено'
+                    }
                 })
         }
     }
