@@ -30,7 +30,7 @@
                     <button @click="addToCart">Купить</button>
                 </div>
                 <div v-if="isInCart" class="buy_button">
-                    <a href="cart">Корзина</a>
+                    <a href="cart">К корзине</a>
                 </div>
             </div>
         </div>
@@ -68,7 +68,6 @@ export default {
 <style>
 
 .cpu_item {
-    
     display: flex;
     justify-content: space-between;
     max-width: 1500px;

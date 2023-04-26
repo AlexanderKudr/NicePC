@@ -1,23 +1,17 @@
 <template>
-    <h2>Корзина</h2>
+
     <div class="cart_item">
         <div class="items">
-        <div class="product">
-            <img src="@/resoures/intelcore_i5-10400f.jpg" alt="">
-            <p class="name" href="">product_id {{ cart_item.product_id }}</p>
-            <p class="price" href="">?₽</p>
-            <button @click="deleteItem" class="tooltip">
-                <img src="@/resoures/delete_button.svg" alt="">
-            </button>
+            <div class="product">
+                <img src="@/resoures/intelcore_i5-10400f.jpg" alt="">
+                <p class="name" href="">product_id {{ cart_item.product_id }}</p>
+                <p class="price" href="">?₽</p>
+                <button @click="deleteItem" class="tooltip">
+                    <img src="@/resoures/delete_button.svg" alt="">
+                </button>
+            </div>
         </div>
-    </div>
-        <div class="buy">
-            <p class="text1">В корзине</p> 
-            <p class="text2">? товар</p>
-            <p class="text3">?₽</p>
-            <button class="buying">К оформлению</button>
-            <button class="delete_all">Очистить корзину</button>
-        </div>
+        
     </div>
 </template>
 
@@ -71,6 +65,10 @@ h2{
             ".   content  content .    ";
         font-size: 20px;
         margin-bottom: 90px;
+
+        .tooltip {
+            z-index: 2;
+        }
 
         .tooltip img {
         width: 30px;
