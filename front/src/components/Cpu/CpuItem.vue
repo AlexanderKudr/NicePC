@@ -25,9 +25,13 @@
             </div>
             <div>
                 <p class="cpu_price">{{ cpu_item.price }}₽</p>
-                <button @click="addToCart" class="cpu_button">
-                    {{ cart_button }}
-                </button>
+
+                <div v-if="!isInCart" class="buy_button">
+                    <button @click="addToCart">Купить</button>
+                </div>
+                <div v-if="isInCart" class="buy_button">
+                    <a href="cart">Корзина</a>
+                </div>
             </div>
         </div>
     </div>
@@ -39,7 +43,7 @@ export default {
     data() {
         return {
             path: 'http://127.0.0.1:8000/',
-            cart_button: 'В корзину'
+            isInCart: false
         }  
     },
     props: {
@@ -53,7 +57,7 @@ export default {
             await axios.post('http://127.0.0.1:8000/cart/', {'product_id': this.cpu_item.id}, {headers: {'Authorization': `Bearer ${localStorage.getItem('token')}`}})
             .then((res) => {
                 if (res.status === 200) {
-                    this.cart_button = 'Добавлено'
+                    this.isInCart = !this.isInCart
                 }
             })
         }
@@ -103,14 +107,22 @@ export default {
     margin-bottom: 20px;
 }
 
-.cpu_button {
-    height: 40px;
-    padding: 0px 20px;
-    font-size: 16px;
+.buy_button {
     border-radius: 6px;
     border: 1px solid transparent;
     text-align: center;
     background-color: rgba(128, 0, 128, 0.5);
-    color: white;
+    width: 120px;
+    height: 50px;
+}
+
+.buy_button a {
+    font-size: 16px;
+    line-height: 50px;
+}
+
+.buy_button button {
+   padding-top: 15px;
+   font-size: 16px;
 }
 </style>

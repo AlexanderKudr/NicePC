@@ -1,14 +1,33 @@
 <template>
     <header>
 		<modal v-model:show="dialogVisible">
-            <form @submit.prevent>
-                <div class="myform_title"><h2>Вход</h2></div>
-                <input type="username" placeholder="username" class="inputbox" required v-model="loginForm.username">
+            <div class="myform_title">
+                <div @click="showSignIn">
+                    Вход
+                </div>
+                <span>/</span>
+                <div @click="showSignUp">
+                    Регистрация
+                </div>
+            </div>
+ 
+            <form v-if="signIn" @submit.prevent>
+
+                <input type="username" placeholder="Имя пользователя" class="inputbox" required v-model="loginForm.username">
                 <input type="password" placeholder="Пароль" class="inputbox" required v-model="loginForm.password">
                 <div class="forgot">
                     <a href="#">Забыли пароль?</a>
                 </div>
                 <button class="login_button" @click="tryLogin">Войти</button>
+            </form>
+
+            <form v-if="signUp" @submit.prevent>
+
+                <input type="username" placeholder="Имя пользователя" class="inputbox" required v-model="registerForm.username">
+                <input type="email" placeholder="Электронная почта" class="inputbox" required v-model="registerForm.email">
+                <input type="password" placeholder="Пароль" class="inputbox" required v-model="registerForm.password">
+    
+                <button class="login_button" @click="tryRegister">Зарегистрироваться</button>
             </form>
         </modal>
 		<div class="header_all_info">
@@ -17,7 +36,7 @@
 					NicePC
 					<p class="wtf">лучшее для вас</p>
 				</a>
-
+ 
 			</div>
 			<div class="choose_number">
 				<select name="">
@@ -66,7 +85,7 @@
 
 <script>
 	import Modal from '@/components/Modal.vue'
-
+    import axios from 'axios'
     export default {
     components: {
     Modal
@@ -79,9 +98,16 @@
                 username: '',
                 password: '',
             },
+            registerForm: {
+                username: '',
+                email: '',
+                password: ''
+            },
             localStorageToken: localStorage.getItem('token'),
             localStorageUsername: localStorage.getItem('username'),
-            upHere: false
+            upHere: false,
+            signIn: true,
+            signUp: false
         }
     },
     methods: {
@@ -109,6 +135,21 @@
                 .then(() => {
                     location.reload()
                 })
+        },
+        showSignIn() {
+            this.signIn = true
+            this.signUp = false
+        },
+        showSignUp() {
+            this.signIn = false
+            this.signUp = true
+        },
+        async tryRegister() {
+            await axios.post('http://localhost:8000/user/', this.registerForm).then((res) => {
+                if (res.status === 200) {
+                    this.dialogVisible = false
+                }
+            })
         }
     },
 }
@@ -167,8 +208,12 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
+.input_search:hover {
+    border-bottom: 1px solid rgba(236, 170, 236, 0.781);
+}
+
 .input_search:focus {
-    box-shadow: 0px 15px 10px -15px rgba(127, 190, 213, 0.93);
+    box-shadow: 0px 15px 10px -15px rgba(221, 134, 221, 0.781);
 }
 
 .catalog_cart {
@@ -211,9 +256,17 @@
 }
 
 .myform_title {
-    margin: 0 auto;
-    font-size: 20px;
+    font-size: 30px;
     margin-bottom: 70px;
+    display: flex;
+}
+
+.myform_title div {
+    margin: 0 auto;
+}
+
+.myform_title div:hover {
+    color: rgba(128, 0, 128, 0.5);
 }
 
 .inputbox {
