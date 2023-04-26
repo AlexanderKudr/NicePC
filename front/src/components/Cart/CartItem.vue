@@ -4,17 +4,17 @@
         <div class="items">
         <div class="product">
             <img src="@/resoures/intelcore_i5-10400f.jpg" alt="">
-            <p class="name" href="">Intel Core i5 12400F</p>
-            <p class="price" href="">14 990₽</p>
-            <button class="tooltip">
+            <p class="name" href="">product_id {{ cart_item.product_id }}</p>
+            <p class="price" href="">?₽</p>
+            <button @click="deleteItem" class="tooltip">
                 <img src="@/resoures/delete_button.svg" alt="">
             </button>
         </div>
     </div>
         <div class="buy">
             <p class="text1">В корзине</p> 
-            <p class="text2">1 товар</p>
-            <p class="text3">14 990₽</p>
+            <p class="text2">? товар</p>
+            <p class="text3">?₽</p>
             <button class="buying">К оформлению</button>
             <button class="delete_all">Очистить корзину</button>
         </div>
@@ -22,8 +22,25 @@
 </template>
 
 <script>
+    import axios from 'axios';
     export default {
-        
+        data() {
+            return {
+
+            }
+        },
+        props: {
+            cart_item: {
+                type: Object,
+                required: true,
+            }
+        },
+        methods: {
+            async deleteItem() {
+                await axios.get(`http://127.0.0.1:8000/cart/delete/${this.cart_item.id}`, {headers: {'Authorization': `Bearer ${localStorage.getItem('token')}`}})
+                location.reload()
+            }
+        }
     }
 </script>
 

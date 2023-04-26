@@ -24,7 +24,7 @@ def get_user_items(db: Session = Depends(get_db), current_user: UserAuth = Depen
     return db_cart.get_items(db, current_user.id)
 
 
-@router.get('/delete')
+@router.get('/delete/{id}')
 def delete_item(id: int, db: Session = Depends(get_db), current_user: UserAuth = Depends(get_current_user)):
     return db_cart.delete(id, db, current_user.id)
 

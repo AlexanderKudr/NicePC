@@ -1,9 +1,6 @@
 <template>
     <div>
-        <div>
-            <span>Cart storage</span>
-            {{ this.response }}
-        </div>
+        <cart-item :cart_item="cart_item" v-for="cart_item in cart_items"/>
     </div>
 </template>
 
@@ -13,7 +10,7 @@
     export default {
         data() {
             return {
-                response: ''
+                cart_items: []
             }
         },
         components:{
@@ -23,7 +20,7 @@
             async fetchCart() {
                 await axios.get('http://127.0.0.1:8000/cart/', {headers: {'Authorization': `Bearer ${localStorage.getItem('token')}`}})
             .then((res) => {
-                this.response = res.data
+                this.cart_items = res.data
             })
             }
         },
