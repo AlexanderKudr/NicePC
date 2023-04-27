@@ -4,8 +4,8 @@
         <div class="items">
             <div class="product">
                 <img src="@/resoures/intelcore_i5-10400f.jpg" alt="">
-                <p class="name" href="">product_id {{ cart_item.product_id }}</p>
-                <p class="price" href="">?₽</p>
+                <p class="name" href="">{{ cart_item.name }}</p>
+                <p class="price" href="">{{ cart_item.price }}₽</p>
                 <button @click="deleteItem" class="tooltip">
                     <img src="@/resoures/delete_button.svg" alt="">
                 </button>

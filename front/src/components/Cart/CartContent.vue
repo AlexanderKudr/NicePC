@@ -5,7 +5,7 @@
             <div class="buy">
                 <p class="text1">В корзине</p> 
                 <p class="text2">{{ this.items_count }} товаров</p>
-                <p class="text3">?₽</p>
+                <p class="text3">На {{ this.allItemsPrice }}₽</p>
                 <button class="buying">К оформлению</button>
                 <button class="delete_all">Очистить корзину</button>
             </div>
@@ -23,7 +23,8 @@
         data() {
             return {
                 cart_items: [],
-                items_count: null
+                items_count: null,
+                allItemsPrice: null
             }
         },
         components:{
@@ -35,6 +36,9 @@
             .then((res) => {
                 this.cart_items = res.data
                 this.items_count = res.data.length
+                for (let i = 0; i < res.data.length; i++) {
+                    this.allItemsPrice += Number(res.data[i].price.replace(/\s+/g, ''))
+                }
             })
             }
         },

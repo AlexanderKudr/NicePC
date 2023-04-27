@@ -77,3 +77,5 @@ class UserLogin(BaseModel):
 
 class Cart(BaseModel):
     product_id: str
+    price: str
+    name: str
