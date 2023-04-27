@@ -24,7 +24,7 @@
             return {
                 cart_items: [],
                 items_count: null,
-                allItemsPrice: null
+                allItemsPrice: 0
             }
         },
         components:{
