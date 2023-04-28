@@ -2,9 +2,10 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-SQLALCHEMY_DATABASE_URL = 'sqlite:///./nicepc.db'
+# SQLALCHEMY_DATABASE_URL = 'sqlite:///./nicepc.db'
+SQLALCHEMY_DATABASE_URL = 'postgresql://kotatsu:qwerty@45.87.246.48:5432/nicepc_psql'
 
-engine = create_engine(SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False})
+engine = create_engine(SQLALCHEMY_DATABASE_URL, echo=False)
 
 SessionLocal = sessionmaker(bind=engine, autocommit=False, autoflush=False)
 

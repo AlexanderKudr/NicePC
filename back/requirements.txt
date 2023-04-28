@@ -6,4 +6,4 @@ bcrypt
 python-multipart
 aiofiles
 python-jose
-
+psycopg2
