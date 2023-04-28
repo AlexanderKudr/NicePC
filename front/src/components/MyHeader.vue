@@ -148,6 +148,8 @@
             await axios.post('http://localhost:8000/user/', this.registerForm).then((res) => {
                 if (res.status === 200) {
                     this.dialogVisible = false
+                    this.signIn = true
+                    this.signUp = false
                 }
             })
         }
