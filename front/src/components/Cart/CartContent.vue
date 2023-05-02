@@ -62,7 +62,6 @@
     position: relative;
     display: flex;
     justify-content: space-between;
-    z-index: -1;
 }
 
 .cart_items {
@@ -103,7 +102,6 @@
         border-radius: 5px;
         margin-top: 20px;
         background-color: rgba(128, 0, 128, 0.5);
-        z-index: 2;
     }
     .delete_all:hover{
         color: white;

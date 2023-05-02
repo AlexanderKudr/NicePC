@@ -327,7 +327,7 @@
     background-color: white;
     margin-top: 10px;
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
-    z-index: 2;
+    z-index: 1;
 }
 
 .dropdown_info {
