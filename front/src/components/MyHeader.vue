@@ -66,7 +66,7 @@
                     <li class='login_ui' v-if="localStorageToken !== null"><button @click="showDropdown">{{ this.localStorageUsername }}</button></li>
 					<li class='favorites_ui'><a href="">Избранное</a></li>
 					<li class='compare_ui'><a href="">Сравнение</a></li>
-					<li class='cart_ui'><a href="cart">Корзина</a></li>
+					<li class='cart_ui'><button @click="tryOpenCart">Корзина</button></li>
 				</ul>
                 <div class="dropdown_content" v-if="dropdownVisible">
                     <div class="dropdown_info">
@@ -111,6 +111,14 @@
         }
     },
     methods: {
+        tryOpenCart() {
+            if (this.localStorageToken !== null) {
+                location.replace("cart")
+            }
+            else {
+                this.showDialog()
+            }
+        },
         showDialog() {
         this.dialogVisible = true
         },
@@ -233,6 +241,10 @@
     padding-bottom: 25px;
 }
 
+.cart_ui{
+    padding-bottom: 25px;
+}
+
 .login_ui button {
     background: url('@/resoures/user.svg') top no-repeat;
     background-size: 18px 18px;
@@ -251,7 +263,7 @@
     padding-top: 25px;
 }
 
-.cart_ui a {
+.cart_ui button {
     background: url('@/resoures/cart.svg') top no-repeat;
     background-size: 20px 20px;
     padding-top: 25px;
