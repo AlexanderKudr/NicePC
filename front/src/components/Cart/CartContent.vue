@@ -43,7 +43,7 @@
             },
             async deleteAllItems() {
                 try{
-                    await axios.get(`http://127.0.0.1:8000/cart/delete/all/`, {headers: {'Authorization': `Bearer ${localStorage.getItem('token')}`}})
+                    await axios.get('http://127.0.0.1:8000/cart/del/all/', {headers: {'Authorization': `Bearer ${localStorage.getItem('token')}`}})
                     location.reload()
                 }
                 catch(error) {
@@ -62,6 +62,7 @@
     position: relative;
     display: flex;
     justify-content: space-between;
+    z-index: 1;
 }
 
 .cart_items {

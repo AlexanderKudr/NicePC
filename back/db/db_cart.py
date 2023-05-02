@@ -29,10 +29,10 @@ def delete(item_id, db: Session, user_id: int):
     db.commit()
     return 'okay'
 
-def delete_all(db: Session, user_id: int):
-    item = db.query(DbUserCart).filter(DbUserCart.user_id == user_id).all()
-    # if item.user_id != user_id:
-        # raise HTTPException(status_code=status.HTTP_404_NOT_FOUND)
-    db.delete(item)
+
+def delete_all_cart_items(db: Session, user_id: int):
+    items = db.query(DbUserCart).filter(DbUserCart.user_id == user_id).all()
+    for item in items:
+        db.delete(item)
     db.commit()
     return 'okay'

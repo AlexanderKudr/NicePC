@@ -315,7 +315,7 @@
     bottom: 0;
     right: 0;
     position: fixed;
-    z-index: 1;
+    z-index: 2;
 }
 
 .dropdown_content {
@@ -327,7 +327,7 @@
     background-color: white;
     margin-top: 10px;
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
-    z-index: 1;
+    z-index: 3;
 }
 
 .dropdown_info {
