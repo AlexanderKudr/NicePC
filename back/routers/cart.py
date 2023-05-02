@@ -29,3 +29,8 @@ def delete_item(id: int, db: Session = Depends(get_db), current_user: UserAuth =
     return db_cart.delete(id, db, current_user.id)
 
 
+@router.get('/delete/all')
+def delete_all_items(db: Session = Depends(get_db), current_user: UserAuth = Depends(get_current_user)):
+    return db_cart.delete_all(db, current_user.id)
+
+

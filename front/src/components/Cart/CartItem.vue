@@ -1,17 +1,13 @@
 <template>
-
     <div class="cart_item">
-        <div class="items">
-            <div class="product">
-                <img src="@/resoures/intelcore_i5-10400f.jpg" alt="">
-                <p class="name" href="">{{ cart_item.name }}</p>
-                <p class="price" href="">{{ cart_item.price }}₽</p>
-                <button @click="deleteItem" class="tooltip">
-                    <img src="@/resoures/delete_button.svg" alt="">
-                </button>
-            </div>
+        <div class="product">
+            <img src="@/resoures/intelcore_i5-10400f.jpg" alt="">
+            <p class="name" href="#">{{ cart_item.name }}</p>
+            <p class="price" href="#">{{ cart_item.price }}₽</p>
+            <button @click="deleteItem" class="tooltip">
+                <img src="@/resoures/delete_button.svg" alt="">
+            </button>
         </div>
-        
     </div>
 </template>
 
@@ -47,24 +43,24 @@ h2{
 }
 
 .cart_item {
-    display: grid;
-    grid-template-columns: repeat(5,1fr);
-    margin: 0 auto;
-
-    .items {
-        grid-column: auto / span 4;
-    }
+    display: flex;
+    width: 920px;
+    justify-content: space-between;
 
     .product {
-        display: grid;
-        grid-template-columns: min-content 7fr 4fr min-content;
-        grid-template-areas:
-            "image title  status  actions" 
-            "image delivery status  actions" 
-            ".   marked   marked  .    " 
-            ".   content  content .    ";
+        display: flex;
         font-size: 20px;
         margin-bottom: 90px;
+        width: 920px;
+        justify-content: space-between;
+        
+        .name{
+            margin-top:15px ;
+        }
+
+        .price{
+            margin-top:15px ;
+        }
 
         .tooltip {
             z-index: 2;
@@ -73,10 +69,10 @@ h2{
         .tooltip img {
         width: 30px;
         height: 30px;
+        margin-right: 20px;
         }
             
-        img {
-            grid-area: image;
+        img { 
             width: 100px;
         }
     }

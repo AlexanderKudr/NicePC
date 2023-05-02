@@ -7,7 +7,7 @@
                 <p class="text2">{{ this.items_count }} товаров</p>
                 <p class="text3">На {{ this.allItemsPrice }}₽</p>
                 <button class="buying">К оформлению</button>
-                <button class="delete_all">Очистить корзину</button>
+                <button class="delete_all" @click="deleteAllItems">Очистить корзину</button>
             </div>
         </div>
         <div class="cart_items">
@@ -40,6 +40,15 @@
                     this.allItemsPrice += Number(res.data[i].price.replace(/\s+/g, ''))
                 }
             })
+            },
+            async deleteAllItems() {
+                try{
+                    await axios.get(`http://127.0.0.1:8000/cart/delete/all/`, {headers: {'Authorization': `Bearer ${localStorage.getItem('token')}`}})
+                    location.reload()
+                }
+                catch(error) {
+                    alert('Error')
+                }
             }
         },
         beforeMount() {
@@ -58,7 +67,7 @@
 
 .cart_items {
     margin-top: -230px;
-    max-width: 1400px;
+    max-width: 920px;
 }
 
 .buy {
@@ -94,6 +103,7 @@
         border-radius: 5px;
         margin-top: 20px;
         background-color: rgba(128, 0, 128, 0.5);
+        z-index: 2;
     }
     .delete_all:hover{
         color: white;
