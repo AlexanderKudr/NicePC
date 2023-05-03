@@ -54,7 +54,7 @@ export default {
     },
     methods: {  
         async addToCart() {
-            await axios.post('http://127.0.0.1:8000/cart/', {'product_id': this.cpu_item.id}, {headers: {'Authorization': `Bearer ${localStorage.getItem('token')}`}})
+            await axios.post('http://127.0.0.1:8000/cart/', {'product_id': this.case_cooler_item.id}, {headers: {'Authorization': `Bearer ${localStorage.getItem('token')}`}})
             .then((res) => {
                 if (res.status === 200) {
                     this.isInCart = !this.isInCart

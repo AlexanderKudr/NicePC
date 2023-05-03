@@ -35,6 +35,7 @@
                 await axios.get('http://127.0.0.1:8000/cart/', {headers: {'Authorization': `Bearer ${localStorage.getItem('token')}`}})
             .then((res) => {
                 this.cart_items = res.data
+                console.log(res.data)
                 this.items_count = res.data.length
                 for (let i = 0; i < res.data.length; i++) {
                     this.allItemsPrice += Number(res.data[i].price.replace(/\s+/g, ''))
