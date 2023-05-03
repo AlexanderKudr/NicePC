@@ -3,7 +3,7 @@
         <div class="cpu_item">
             <div class="left-box">
                 <div>
-                    <img class="cpu_picture" :src="path+cpu_item.cpu_image" alt="">
+                    <img class="cpu_picture" :src="path+cpu_item.image" alt="">
                 </div>
                 <div>
                     <div class="cpu_name">
@@ -14,12 +14,12 @@
                     <div class="css_line">
                     </div>
                     <ul class="cpu_specifications">
-                        <li>Ядро: {{ cpu_item.core }}</li>
-                        <li>Частота: {{ cpu_item.cpu_clock }}</li>
-                        <li>Число ядер: {{ cpu_item.threads }}</li>
-                        <li>Сокет: {{ cpu_item.socket }}</li>
-                        <li>Тепловыделение: {{ cpu_item.tdp }}</li>
-                        <li>Технологический процесс: {{ cpu_item.nm }}</li>
+                        <li>Ядро: {{ cpu_item.param1 }}</li>
+                        <li>Частота: {{ cpu_item.param2 }}</li>
+                        <li>Число ядер: {{ cpu_item.param3 }}</li>
+                        <li>Сокет: {{ cpu_item.param4 }}</li>
+                        <li>Тепловыделение: {{ cpu_item.param5 }}</li>
+                        <li>Технологический процесс: {{ cpu_item.param6 }}</li>
                     </ul>
                 </div>
             </div>

@@ -1,6 +1,6 @@
 from routers.schemas import Cart
 from sqlalchemy.orm import Session
-from db.models import DbUserCart, DbCpuItem
+from db.models import DbUserCart, DbItem
 from fastapi import HTTPException, status
 
 def add_item_to_cart(db: Session, request: Cart, user_id):

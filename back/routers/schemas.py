@@ -60,14 +60,16 @@ class CommentBase(BaseModel):
     text: str
     post_id: int
 
-class CpuItemBase(BaseModel):
+class ItemBase(BaseModel):
+    type_id: int
     name: str
-    core: str
-    cpu_clock: str
-    socket: str
-    threads: str
-    tdp: str
-    nm: str
+    param1: str
+    param2: str
+    param3: str
+    param4: str
+    param5: str
+    param6: str
+    param7: str
     price: str
 
 class UserLogin(BaseModel):

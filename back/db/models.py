@@ -15,24 +15,23 @@ class DbUserCart(Base):
     __tablename__ = 'cart_items'
     id = Column(Integer, primary_key=True, index=True)
     user_id = Column(Integer, ForeignKey('user.id'))
-    user = relationship('DbUser')
-    product_id = Column(Integer, ForeignKey('cpu_item.id'))
-    price = Column(String)
-    name = Column(String)
+    product_id = Column(Integer, ForeignKey('items.id'))
 
     
-class DbCpuItem(Base):
-    __tablename__ = 'cpu_item'
+class DbItem(Base):
+    __tablename__ = 'items'
     id = Column(Integer, primary_key=True, index=True)
+    type_id = Column(String)
     name = Column(String)
-    core = Column(String)
-    cpu_clock = Column(String)
-    socket = Column(String)
-    threads = Column(String)
-    tdp = Column(String)
-    nm = Column(String)
+    param1 = Column(String)
+    param2 = Column(String)
+    param3 = Column(String)
+    param4 = Column(String)
+    param5 = Column(String)
+    param6 = Column(String)
+    param7 = Column(String)
     price = Column(String)
-    cpu_image = Column(String)
+    image = Column(String)
 
 
 

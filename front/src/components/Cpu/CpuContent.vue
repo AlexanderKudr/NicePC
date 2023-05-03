@@ -19,7 +19,7 @@ import CpuItem from '@/components/Cpu/CpuItem.vue';
         methods:{
             async fetchCpu() {
                 try {
-                    await axios.get('http://127.0.0.1:8000/cpu_item/').then((res) => {
+                    await axios.get('http://localhost:8000/item/?type_id=1').then((res) => {
                     this.cpu_items = res.data
                     })
                 } 
