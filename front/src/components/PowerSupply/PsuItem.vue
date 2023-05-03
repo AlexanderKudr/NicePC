@@ -3,28 +3,28 @@
         <div class="cpu_item">
             <div class="left-box">
                 <div>
-                    <img class="cpu_picture" :src="path+cpu_item.image" alt="">
+                    <img class="cpu_picture" :src="path+psu_item.image" alt="">
                 </div>
                 <div>
                     <div class="cpu_name">
                         <a href="">
-                            {{ cpu_item.name }}
+                            {{ psu_item.name }}
                         </a>
                     </div>
                     <div class="css_line">
                     </div>
                     <ul class="cpu_specifications">
-                        <li>Ядро: {{ cpu_item.param1 }}</li>
-                        <li>Частота: {{ cpu_item.param2 }}</li>
-                        <li>Число ядер: {{ cpu_item.param3 }}</li>
-                        <li>Сокет: {{ cpu_item.param4 }}</li>
-                        <li>Тепловыделение: {{ cpu_item.param5 }}</li>
-                        <li>Технологический процесс: {{ cpu_item.param6 }}</li>
+                        <li>Ядро: {{ psu_item.param1 }}</li>
+                        <li>Частота: {{ psu_item.param2 }}</li>
+                        <li>Число ядер: {{ psu_item.param3 }}</li>
+                        <li>Сокет: {{ psu_item.param4 }}</li>
+                        <li>Тепловыделение: {{ psu_item.param5 }}</li>
+                        <li>Технологический процесс: {{ psu_item.param6 }}</li>
                     </ul>
                 </div>
             </div>
             <div>
-                <p class="cpu_price">{{ cpu_item.price }}₽</p>
+                <p class="cpu_price">{{ psu_item.price }}₽</p>
 
                 <div v-if="!isInCart" class="buy_button">
                     <button @click="addToCart">Купить</button>
@@ -47,14 +47,14 @@ export default {
         }  
     },
     props: {
-        cpu_item: {
+        psu_item: {
             type: Object,
             required: true,
         }
     },
     methods: {  
         async addToCart() {
-            await axios.post('http://127.0.0.1:8000/cart/', {'product_id': this.cpu_item.id, 'price': this.cpu_item.price, 'name': this.cpu_item.name}, {headers: {'Authorization': `Bearer ${localStorage.getItem('token')}`}})
+            await axios.post('http://127.0.0.1:8000/cart/', {'product_id': this.cpu_item.id}, {headers: {'Authorization': `Bearer ${localStorage.getItem('token')}`}})
             .then((res) => {
                 if (res.status === 200) {
                     this.isInCart = !this.isInCart

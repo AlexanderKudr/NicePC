@@ -1,26 +1,26 @@
 !<template>
     <div>
-        <cpu-item :cpu_item="cpu_item" v-for="cpu_item in cpu_items"/>
+        <case-item :case_item="case_item" v-for="case_item in case_items"/>
     </div>
 </template>
 
 <script>
 import axios from 'axios';
-import CpuItem from '@/components/Cpu/CpuItem.vue';
+import CaseItem from '@/components/Case/CaseItem.vue';
     export default {
         components: {
-            CpuItem
+            CaseItem
         },
         data() {
             return {
-                cpu_items: []
+                case_items: []
             }
         },
         methods:{
-            async fetchCpu() {
+            async fetchCase() {
                 try {
-                    await axios.get('http://localhost:8000/item/?type_id=1').then((res) => {
-                    this.cpu_items = res.data
+                    await axios.get('http://localhost:8000/item/?type_id=5').then((res) => {
+                    this.case_items = res.data
                     })
                 } 
                 catch (error) {
@@ -29,7 +29,7 @@ import CpuItem from '@/components/Cpu/CpuItem.vue';
             }
         },
         beforeMount() {
-            this.fetchCpu()
+            this.fetchCase()
         }
 }
 </script>

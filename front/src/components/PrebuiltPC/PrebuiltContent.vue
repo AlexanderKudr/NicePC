@@ -1,26 +1,26 @@
 !<template>
     <div>
-        <cpu-item :cpu_item="cpu_item" v-for="cpu_item in cpu_items"/>
+        <prebuilt-item :prebuilt_item="prebuilt_item" v-for="prebuilt_item in prebuilt_items"/>
     </div>
 </template>
 
 <script>
 import axios from 'axios';
-import CpuItem from '@/components/Cpu/CpuItem.vue';
+import PrebuiltItem from '@/components/PrebuiltPC/PrebuiltItem.vue';
     export default {
         components: {
-            CpuItem
+            PrebuiltItem
         },
         data() {
             return {
-                cpu_items: []
+                prebuilt_items: []
             }
         },
         methods:{
-            async fetchCpu() {
+            async fetchPrebuilt() {
                 try {
-                    await axios.get('http://localhost:8000/item/?type_id=1').then((res) => {
-                    this.cpu_items = res.data
+                    await axios.get('http://localhost:8000/item/?type_id=10').then((res) => {
+                    this.prebuilt_items = res.data
                     })
                 } 
                 catch (error) {
@@ -29,7 +29,7 @@ import CpuItem from '@/components/Cpu/CpuItem.vue';
             }
         },
         beforeMount() {
-            this.fetchCpu()
+            this.fetchPrebuilt()
         }
 }
 </script>

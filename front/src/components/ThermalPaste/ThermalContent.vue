@@ -1,26 +1,26 @@
 !<template>
     <div>
-        <cpu-item :cpu_item="cpu_item" v-for="cpu_item in cpu_items"/>
+        <thermal-item :thermal_item="thermal_item" v-for="thermal_item in thermal_items"/>
     </div>
 </template>
 
 <script>
 import axios from 'axios';
-import CpuItem from '@/components/Cpu/CpuItem.vue';
+import ThermalItem from './ThermalItem.vue';
     export default {
         components: {
-            CpuItem
+            ThermalItem
         },
         data() {
             return {
-                cpu_items: []
+                thermal_items: []
             }
         },
         methods:{
-            async fetchCpu() {
+            async fetchThermal() {
                 try {
-                    await axios.get('http://localhost:8000/item/?type_id=1').then((res) => {
-                    this.cpu_items = res.data
+                    await axios.get('http://localhost:8000/item/?type_id=9').then((res) => {
+                    this.thermal_items = res.data
                     })
                 } 
                 catch (error) {
@@ -29,7 +29,7 @@ import CpuItem from '@/components/Cpu/CpuItem.vue';
             }
         },
         beforeMount() {
-            this.fetchCpu()
+            this.fetchThermal()
         }
 }
 </script>

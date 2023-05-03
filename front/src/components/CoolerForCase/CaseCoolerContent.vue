@@ -1,26 +1,26 @@
 !<template>
     <div>
-        <cpu-item :cpu_item="cpu_item" v-for="cpu_item in cpu_items"/>
+        <case-cooler-item :case_cooler_item="case_cooler_item" v-for="case_cooler_item in case_cooler_items"/>
     </div>
 </template>
 
 <script>
 import axios from 'axios';
-import CpuItem from '@/components/Cpu/CpuItem.vue';
+import CaseCoolerItem from '@/components/CoolerForCase/CaseCoolerItem.vue';
     export default {
         components: {
-            CpuItem
+            CaseCoolerItem
         },
         data() {
             return {
-                cpu_items: []
+                case_cooler_items: []
             }
         },
         methods:{
-            async fetchCpu() {
+            async fetchCaseCooler() {
                 try {
-                    await axios.get('http://localhost:8000/item/?type_id=1').then((res) => {
-                    this.cpu_items = res.data
+                    await axios.get('http://localhost:8000/item/?type_id=8').then((res) => {
+                    this.case_cooler_items = res.data
                     })
                 } 
                 catch (error) {
@@ -29,7 +29,7 @@ import CpuItem from '@/components/Cpu/CpuItem.vue';
             }
         },
         beforeMount() {
-            this.fetchCpu()
+            this.fetchCaseCooler()
         }
 }
 </script>

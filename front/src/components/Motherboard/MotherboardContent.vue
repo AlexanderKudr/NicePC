@@ -1,26 +1,26 @@
 !<template>
     <div>
-        <cpu-item :cpu_item="cpu_item" v-for="cpu_item in cpu_items"/>
+        <motherboard-item :motherboard_item="motherboard_item" v-for="motherboard_item in motherboard_items"/>
     </div>
 </template>
 
 <script>
 import axios from 'axios';
-import CpuItem from '@/components/Cpu/CpuItem.vue';
+import MotherboardItem from '@/components/Motherboard/MotherboardItem.vue';
     export default {
         components: {
-            CpuItem
+            MotherboardItem
         },
         data() {
             return {
-                cpu_items: []
+                motherboard_items: []
             }
         },
         methods:{
-            async fetchCpu() {
+            async fetchMotherboard() {
                 try {
-                    await axios.get('http://localhost:8000/item/?type_id=1').then((res) => {
-                    this.cpu_items = res.data
+                    await axios.get('http://localhost:8000/item/?type_id=6').then((res) => {
+                    this.motherboard_items = res.data
                     })
                 } 
                 catch (error) {
@@ -29,7 +29,7 @@ import CpuItem from '@/components/Cpu/CpuItem.vue';
             }
         },
         beforeMount() {
-            this.fetchCpu()
+            this.fetchMotherboard()
         }
 }
 </script>

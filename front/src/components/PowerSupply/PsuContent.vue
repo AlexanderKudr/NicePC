@@ -1,26 +1,26 @@
 !<template>
     <div>
-        <cpu-item :cpu_item="cpu_item" v-for="cpu_item in cpu_items"/>
+        <psu-item :psu_item="psu_item" v-for="psu_item in psu_items"/>
     </div>
 </template>
 
 <script>
 import axios from 'axios';
-import CpuItem from '@/components/Cpu/CpuItem.vue';
+import PsuItem from '@/components/PowerSupply/PsuItem.vue';
     export default {
         components: {
-            CpuItem
+            PsuItem
         },
         data() {
             return {
-                cpu_items: []
+                psu_items: []
             }
         },
         methods:{
-            async fetchCpu() {
+            async fetchPsu() {
                 try {
-                    await axios.get('http://localhost:8000/item/?type_id=1').then((res) => {
-                    this.cpu_items = res.data
+                    await axios.get('http://localhost:8000/item/?type_id=4').then((res) => {
+                    this.psu_items = res.data
                     })
                 } 
                 catch (error) {
@@ -29,7 +29,7 @@ import CpuItem from '@/components/Cpu/CpuItem.vue';
             }
         },
         beforeMount() {
-            this.fetchCpu()
+            this.fetchPsu()
         }
 }
 </script>

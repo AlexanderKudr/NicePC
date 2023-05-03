@@ -1,26 +1,26 @@
 !<template>
     <div>
-        <cpu-item :cpu_item="cpu_item" v-for="cpu_item in cpu_items"/>
+        <videocard-item :videocard_item="videocard_item" v-for="videocard_item in videocard_items"/>
     </div>
 </template>
 
 <script>
 import axios from 'axios';
-import CpuItem from '@/components/Cpu/CpuItem.vue';
+import VideocardItem from './VideocardItem.vue';
     export default {
         components: {
-            CpuItem
+            VideocardItem
         },
         data() {
             return {
-                cpu_items: []
+                videocard_items: []
             }
         },
         methods:{
-            async fetchCpu() {
+            async fetchVideocard() {
                 try {
-                    await axios.get('http://localhost:8000/item/?type_id=1').then((res) => {
-                    this.cpu_items = res.data
+                    await axios.get('http://localhost:8000/item/?type_id=3').then((res) => {
+                    this.videocard_items = res.data
                     })
                 } 
                 catch (error) {
@@ -29,7 +29,7 @@ import CpuItem from '@/components/Cpu/CpuItem.vue';
             }
         },
         beforeMount() {
-            this.fetchCpu()
+            this.fetchVideocard()
         }
 }
 </script>

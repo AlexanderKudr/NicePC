@@ -4,39 +4,39 @@
             <img class="img_body" src="@/resoures/cpu.jpg" alt="">
             <div>Процессоры</div>
         </a>
-        <a class="catalog_categories" href="">
+        <a class="catalog_categories" href="ram">
             <img class="img_body" src="@/resoures/ram.jpg" alt=""> 
             <div>Оперативная память</div>
         </a>
-        <a class="catalog_categories" href="">
+        <a class="catalog_categories" href="videocard">
             <img class="img_body" src="@/resoures/videocard.png" alt="">
             <div>Видеокарты</div>
         </a>
-        <a class="catalog_categories" href="">
+        <a class="catalog_categories" href="psu">
             <img class="img_body" src="@/resoures/psu.jpg" alt="">
             <div>Блоки питания</div>
         </a>
-        <a class="catalog_categories" href="">
+        <a class="catalog_categories" href="case">
             <img class="img_body" src="@/resoures/case.png" alt="">
             <div>Корпусы</div>
         </a>
-        <a class="catalog_categories" href="">
+        <a class="catalog_categories" href="motherboard">
             <img class="img_body" src="@/resoures/motherboard.png" alt="">
             <div>Материнские платы</div>
         </a>
-        <a class="catalog_categories" href="">
+        <a class="catalog_categories" href="cpu_cooler">
             <img class="img_body" src="@/resoures/cpu_fan.png" alt="">
             <div>Охлаждение процессора</div>
         </a>
-        <a class="catalog_categories" href="">
+        <a class="catalog_categories" href="case_cooler">
             <img class="img_body" src="@/resoures/case_fan.png" alt="">
             <div>Охлаждение корпуса</div>
         </a>
-        <a class="catalog_categories" href="">
+        <a class="catalog_categories" href="thermal">
             <img class="img_body" src="@/resoures/thermal_paste.png" alt="">
             <div>Термопасты</div>
         </a>
-        <a class="catalog_categories" href="">
+        <a class="catalog_categories" href="prebuilt">
             <img class="img_body" src="@/resoures/done_pc.jpg" alt="">
             <div>Готовые Сборки</div>
         </a>

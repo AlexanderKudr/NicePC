@@ -1,26 +1,26 @@
 !<template>
     <div>
-        <cpu-item :cpu_item="cpu_item" v-for="cpu_item in cpu_items"/>
+        <ram-item :ram_item="ram_item" v-for="ram_item in ram_items"/>
     </div>
 </template>
 
 <script>
 import axios from 'axios';
-import CpuItem from '@/components/Cpu/CpuItem.vue';
+import RamItem from './RamItem.vue';
     export default {
         components: {
-            CpuItem
+            RamItem
         },
         data() {
             return {
-                cpu_items: []
+                ram_items: []
             }
         },
         methods:{
-            async fetchCpu() {
+            async fetchRam() {
                 try {
-                    await axios.get('http://localhost:8000/item/?type_id=1').then((res) => {
-                    this.cpu_items = res.data
+                    await axios.get('http://localhost:8000/item/?type_id=2').then((res) => {
+                    this.ram_items = res.data
                     })
                 } 
                 catch (error) {
@@ -29,7 +29,7 @@ import CpuItem from '@/components/Cpu/CpuItem.vue';
             }
         },
         beforeMount() {
-            this.fetchCpu()
+            this.fetchRam()
         }
 }
 </script>
