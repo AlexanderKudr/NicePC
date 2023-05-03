@@ -6,9 +6,14 @@ from fastapi import HTTPException, Depends, status
 from sqlalchemy.orm import Session
 from db.database import get_db
 from db import db_user
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="login")
-SECRET_KEY = '94B10C1ECAA87A91BB98C7FEEFB2508FF0E40970DC846D79F0FCD4611D133BE4'
+
 ALGORITHM = 'HS256'
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
@@ -19,7 +24,7 @@ def create_access_token(data: dict, expires_delta: Optional[timedelta] = None):
   else:
     expire = datetime.utcnow() + timedelta(minutes=120)
   to_encode.update({"exp": expire})
-  encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
+  encoded_jwt = jwt.encode(to_encode, os.getenv('SECRET_KEY'), algorithm=ALGORITHM)
   return encoded_jwt
 
 def get_current_user(token: str = Depends(oauth2_scheme), db: Session = Depends(get_db)):
@@ -29,7 +34,7 @@ def get_current_user(token: str = Depends(oauth2_scheme), db: Session = Depends(
     headers={"WWW-Authenticate": "Bearer"},
   )
   try:
-    payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+    payload = jwt.decode(token, os.getenv('SECRET_KEY'), algorithms=[ALGORITHM])
     username: str = payload.get("username")
     if username is None:
       raise credentials_exception
