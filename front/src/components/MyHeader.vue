@@ -141,7 +141,7 @@
         tryLogout() {
             this.$store.dispatch('onLogout')
                 .then(() => {
-                    location.reload()
+                    location.replace('/')
                 })
         },
         showSignIn() {

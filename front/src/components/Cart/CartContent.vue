@@ -59,7 +59,6 @@
 
 <style lang="scss">
 .cart_top {
-    position: relative;
     display: flex;
     justify-content: space-between;
     z-index: 1;
