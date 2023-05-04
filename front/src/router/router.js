@@ -4,6 +4,7 @@ import { createRouter, createWebHashHistory, createWebHistory } from "vue-router
 import Cart from "@/pages/Cart.vue"
 import Profile from "@/pages/Profile.vue"
 import Cpu from "@/pages/Cpu.vue"
+import CpuItemPage from "@/components/Cpu/CpuItemPage.vue"
 import Case from "@/pages/Case.vue"
 import CaseCooler from "@/pages/CaseCooler.vue"
 import CpuCooler from "@/pages/CpuCooler.vue"
@@ -34,6 +35,10 @@ const routes = [
     {
         path: '/cpu',
         component: Cpu
+    },
+    {
+        path: '/cpu/:id',
+        component: CpuItemPage
     },
     {
         path: '/case',

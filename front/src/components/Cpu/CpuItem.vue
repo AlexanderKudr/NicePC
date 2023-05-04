@@ -7,9 +7,9 @@
                 </div>
                 <div>
                     <div class="cpu_name">
-                        <a href="">
+                        <button @click="$router.push(`/cpu/${cpu_item.id}`)">
                             {{ cpu_item.name }}
-                        </a>
+                        </button>
                     </div>
                     <div class="css_line">
                     </div>
@@ -85,8 +85,7 @@ export default {
     margin-right: 50px;
 }
 
-.cpu_name {
-    margin-bottom: 20px;
+.cpu_name button {
     font-size: 20px;
 }
 

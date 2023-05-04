@@ -37,3 +37,6 @@ def db_delete_item(db: Session, id: int):
 def db_get_all_items(db: Session, type_id: str):
     return db.query(DbItem).filter(DbItem.type_id == type_id).all()
 
+
+def db_get_one_item(db: Session, item_id):
+    return db.query(DbItem).filter(DbItem.id == item_id).first()

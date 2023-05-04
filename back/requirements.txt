@@ -6,5 +6,5 @@ bcrypt
 python-multipart
 aiofiles
 python-jose
-psycopg2
+psycopg2-binary
 python-dotenv

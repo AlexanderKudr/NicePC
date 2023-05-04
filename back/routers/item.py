@@ -34,4 +34,8 @@ def delete_item(id: int, db: Session = Depends(get_db)):
 def get_all_items(type_id: str, db: Session = Depends(get_db)):
     return db_item.db_get_all_items(db, type_id)
 
+@router.get('/one')
+def get_one_item(item_id: str, db: Session = Depends(get_db)):
+    return db_item.db_get_one_item(db, item_id)
+
 
