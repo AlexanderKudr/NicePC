@@ -1,12 +1,20 @@
 <template>
+    <my-header/>
     <div class="page">
         {{ this.info }}
+    </div>
+    <div>
+        <!-- write here -->
     </div>
 </template>
 
 <script>
 import axios from 'axios'
+import MyHeader from '../MyHeader.vue'
 export default {
+    components: {
+        MyHeader
+    },
     data() {
         return {
             path: 'http://127.0.0.1:8000/',
