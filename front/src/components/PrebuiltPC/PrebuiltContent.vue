@@ -1,5 +1,5 @@
 !<template>
-    <div>
+    <div style="overflow-y: auto;">
         <prebuilt-item :prebuilt_item="prebuilt_item" v-for="prebuilt_item in prebuilt_items"/>
     </div>
 </template>

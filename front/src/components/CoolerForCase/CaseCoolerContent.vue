@@ -1,5 +1,5 @@
 !<template>
-    <div>
+    <div style="overflow-y: auto;">
         <case-cooler-item :case_cooler_item="case_cooler_item" v-for="case_cooler_item in case_cooler_items"/>
     </div>
 </template>

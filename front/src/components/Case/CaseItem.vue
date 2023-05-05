@@ -1,9 +1,10 @@
+
 <template>
     <div>
         <div class="cpu_item">
             <div class="left-box">
                 <div>
-                    <img class="cpu_picture" :src="path+case_item.image" alt="">
+                    <img class="cpu_picture" :src="path + case_item.image" alt="">
                 </div>
                 <div>
                     <div class="cpu_name">
@@ -44,7 +45,7 @@ export default {
         return {
             path: 'http://127.0.0.1:8000/',
             isInCart: false
-        }  
+        }
     },
     props: {
         case_item: {
@@ -52,21 +53,20 @@ export default {
             required: true,
         }
     },
-    methods: {  
+    methods: {
         async addToCart() {
-            await axios.post('http://127.0.0.1:8000/cart/', {'product_id': this.case_item.id}, {headers: {'Authorization': `Bearer ${localStorage.getItem('token')}`}})
-            .then((res) => {
-                if (res.status === 200) {
-                    this.isInCart = !this.isInCart
-                }
-            })
+            await axios.post('http://127.0.0.1:8000/cart/', { 'product_id': this.case_item.id }, { headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` } })
+                .then((res) => {
+                    if (res.status === 200) {
+                        this.isInCart = !this.isInCart
+                    }
+                })
         }
     }
 }
 </script>
 
 <style>
-
 .cpu_item {
     display: flex;
     justify-content: space-between;
@@ -90,7 +90,7 @@ export default {
     font-size: 20px;
 }
 
-.css_line{
+.css_line {
     margin-bottom: 40px;
     width: 400px;
     height: 1px;
@@ -121,7 +121,7 @@ export default {
 }
 
 .buy_button button {
-   padding-top: 15px;
-   font-size: 16px;
+    padding-top: 15px;
+    font-size: 16px;
 }
 </style>
