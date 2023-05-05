@@ -1,3 +1,7 @@
+<script setup >
+import { ref } from 'vue'
+const counter = ref(0);
+</script>
 <template>
     <div class="catalog_body">
         <a class="catalog_categories" href="cpu">
@@ -5,7 +9,7 @@
             <div>Процессоры</div>
         </a>
         <a class="catalog_categories" href="ram">
-            <img class="img_body" src="@/resoures/ram.jpg" alt=""> 
+            <img class="img_body" src="@/resoures/ram.jpg" alt="">
             <div>Оперативная память</div>
         </a>
         <a class="catalog_categories" href="videocard">
@@ -44,35 +48,54 @@
 </template>
 
 <script>
-    export default {
-        
-    }
+export default {
+
+}
 </script>
 
-<style>
-.catalog_body{
-    display: grid;
-    grid-auto-rows: min-content;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 50px;
-    padding-top: 100px;
-    max-width: 1300px;
-    margin: 0 auto;
+<style lang="scss">
+.catalog_body {
+    // overflow-y: auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin: 60px 0 30px 0;
+
+    @media screen and (max-width: 768px) {
+        gap: 50px;
+    }
+
 }
 
 .catalog_categories {
     width: 200px;
     height: 200px;
     text-align: center;
+
+    @media screen and (max-width: 768px) {
+        width: 80px;
+        height: 80px;
+
+    }
+
 }
 
-.catalog_categories div {
-    padding-top: 20px;
-    font-weight: 500;
-}
+// .catalog_categories div {
+//     padding-top: 20px;
+//     font-weight: 500;
+// }
 
-.img_body{
+.img_body {
     width: 180px;
     height: 180px;
+    margin-bottom: 10px;
+
+    @media screen and (max-width: 768px) {
+        width: 80px;
+        height: 80px;
+
+    }
 }
 </style>

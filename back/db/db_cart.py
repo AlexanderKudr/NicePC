@@ -15,8 +15,7 @@ def add_item_to_cart(db: Session, request: Cart, user_id):
 
 
 def get_items(db: Session, user_id: int):
-    items = db.query(DbUserCart).join(DbItem).filter(DbUserCart.user_id == user_id).all()
-    # items = db.query(DbUserCart, DbItem).filter(DbUserCart.product_id == DbItem.id).filter(DbUserCart.user_id == user_id).all()
+    items = db.query(DbItem).join(DbUserCart).filter(DbUserCart.user_id == user_id).all()
     return items
 
 

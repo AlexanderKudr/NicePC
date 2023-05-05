@@ -1,7 +1,7 @@
 <template>
-    <my-header/>
-    <index-content/>
-    <my-footer/>
+    <my-header />
+    <index-content />
+    <my-footer />
 </template>
 
 <script>
@@ -11,17 +11,17 @@ import IndexContent from '@/components/Index/IndexContent.vue'
 
 export default {
     components: {
-    MyHeader,
-    MyFooter,
-    IndexContent
-},
+        MyHeader,
+        MyFooter,
+        IndexContent
+    },
     data() {
         return {
-            
+
         }
     },
     methods: {
-        
+
     }
 }
 </script>
