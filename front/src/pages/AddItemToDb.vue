@@ -9,7 +9,7 @@
         <li @click="setTypeId7">Охлад проца</li>
         <li @click="setTypeId8">Охлад корпуса</li>
         <li @click="setTypeId9">Термопаста</li>
-        <li @click="setTypeId10">Готовые сборки</li>
+        <li @click="setTypeId10">Хранилище данных</li>
     </ul>
     <div v-if="this.form.type_id === 1">
         <form @submit.prevent class="send_item">

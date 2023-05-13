@@ -40,9 +40,9 @@ const counter = ref(0);
             <img class="img_body" src="@/resoures/thermal_paste.png" alt="">
             <div>Термопасты</div>
         </a>
-        <a class="catalog_categories" href="prebuilt">
-            <img class="img_body" src="@/resoures/done_pc.jpg" alt="">
-            <div>Готовые Сборки</div>
+        <a class="catalog_categories" href="hdd_ssd">
+            <img class="img_body" src="@/resoures/hdd.jpg" alt="">
+            <div>Хранилище данных</div>
         </a>
     </div>
 </template>

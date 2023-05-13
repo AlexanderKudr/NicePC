@@ -10,7 +10,7 @@ import CaseCooler from "@/pages/CaseCooler.vue";
 import CpuCooler from "@/pages/CpuCooler.vue";
 import Motherboard from "@/pages/Motherboard.vue";
 import Psu from "@/pages/Psu.vue";
-import Prebuilt from "@/pages/Prebuilt.vue";
+import HddSsd from "@/pages/HddSsd.vue";
 import Ram from "@/pages/Ram.vue";
 import Thermal from "@/pages/Thermal.vue";
 import Videocard from "@/pages/Videocard.vue";
@@ -61,8 +61,8 @@ const routes = [
     component: Psu,
   },
   {
-    path: "/prebuilt",
-    component: Prebuilt,
+    path: "/hdd_ssd",
+    component: HddSsd,
   },
   {
     path: "/ram",
