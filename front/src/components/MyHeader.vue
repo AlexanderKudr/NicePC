@@ -61,12 +61,13 @@ const { handleMenu, closeModal, handleMenuClass } = useMenu();
 		</div>
 		<div :class="handleMenuClass">
 			<ul>
-				<li @click="showDialog" class='login_ui' v-if="localStorageToken === null"><a>Войти</a>
+				<li @click="showDialog" class='login_ui' v-if="localStorageToken === null">
+					<button>Войти</button>
 					<UserIcon />
 				</li>
-				<li @click="showDropdown" class='login_ui' v-if="localStorageToken !== null"><button>{{
-					this.localStorageUsername }}</button>
-					<UserIcon />
+				<li @click="this.$router.push('/profile')" class='login_ui' v-if="localStorageToken !== null">
+					<button>{{this.localStorageUsername }}</button>
+					<UserIcon/>
 				</li>
 				<li class='favorites_ui'><button href="">Избранное</button>
 					<Favorites />
@@ -74,8 +75,12 @@ const { handleMenu, closeModal, handleMenuClass } = useMenu();
 				<li class='compare_ui'><button href="">Сравнение</button>
 					<Compare />
 				</li>
-				<li class='cart_ui'><button @click="tryOpenCart">Корзина</button>
+				<li @click="tryOpenCart" class='cart_ui'><button>Корзина</button>
 					<Cart />
+				</li>
+				<li @click="tryLogout" v-if="localStorageToken !== null">
+					<button>Выйти</button>
+					<Logout/>
 				</li>
 			</ul>
 
@@ -108,15 +113,15 @@ import UserIcon from '@/components/icons/UserIcon.vue';
 import Cart from '@/components/icons/Cart.vue';
 import Compare from '@/components/icons/Compare.vue';
 import Favorites from '@/components/icons/Favorites.vue';
+import Logout from '@/components/icons/Logout.vue';
 import axios from 'axios'
 export default {
 	components: {
-		Modal, Hamburger, UserIcon, Cart, Compare, Favorites
+		Modal, Hamburger, UserIcon, Cart, Compare, Favorites, Logout
 	},
 	data() {
 		return {
 			dialogVisible: false,
-			dropdownVisible: false,
 			loginForm: {
 				username: '',
 				password: '',
@@ -144,12 +149,6 @@ export default {
 		},
 		showDialog() {
 			this.dialogVisible = true
-		},
-		showDropdown() {
-			this.dropdownVisible = true
-		},
-		hideDropdown() {
-			this.dropdownVisible = false
 		},
 		tryLogin() {
 			this.dialogVisible = false
