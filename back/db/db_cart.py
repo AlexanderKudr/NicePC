@@ -13,7 +13,7 @@ def add_item_to_cart(db: Session, request: Cart, user_id):
     db.refresh(new_item)
     return new_item
 
-
+# Отдаю не ту дату, посмотри в консол лог!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 def get_items(db: Session, user_id: int):
     items = db.query(DbItem).join(DbUserCart).filter(DbUserCart.user_id == user_id).all()
     return items

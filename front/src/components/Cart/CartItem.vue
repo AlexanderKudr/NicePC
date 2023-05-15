@@ -70,6 +70,10 @@ h2{
         width: 30px;
         height: 30px;
         margin-right: 20px;
+        &:hover > svg path {
+        fill: rgba(221, 134, 221, 0.781);
+
+      }
         }
             
         img { 
