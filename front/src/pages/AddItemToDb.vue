@@ -35,8 +35,6 @@
             <input type="text" placeholder="Латентность" v-model="form.param3">
             <input type="text" placeholder="Тайминги" v-model="form.param4">
             <input type="text" placeholder="Форм-фактор" v-model="form.param5">
-            <input type="text" placeholder="param6" v-model="form.param6">
-            <input type="text" placeholder="param7" v-model="form.param7">
             <input type="text" placeholder="Цена" v-model="form.price">
             <label for="file" style="margin-left: 20px;">Choose picture</label>
             <input type="file" @change="updatePhoto($event.target.files[0])" accept="image/*">
@@ -46,13 +44,12 @@
     <div v-if="this.form.type_id === 3">
         <form @submit.prevent class="send_item">
             <input type="text" placeholder="Name" v-model="form.name">
-            <input type="text" placeholder="Core" v-model="form.param1">
-            <input type="text" placeholder="Cpu clock" v-model="form.param2">
-            <input type="text" placeholder="Socket" v-model="form.param3">
-            <input type="text" placeholder="Threads" v-model="form.param4">
-            <input type="text" placeholder="Tdp" v-model="form.param5">
-            <input type="text" placeholder="Nm" v-model="form.param6">
-            <input type="text" placeholder="param7" v-model="form.param7">
+            <input type="text" placeholder="Видеочипсет" v-model="form.param1">
+            <input type="text" placeholder="Память" v-model="form.param2">
+            <input type="text" placeholder="Интерфейс" v-model="form.param3">
+            <input type="text" placeholder="Техпроцесс" v-model="form.param4">
+            <input type="text" placeholder="Разъемы" v-model="form.param5">
+            <input type="text" placeholder="Питание" v-model="form.param6">
             <input type="text" placeholder="Price" v-model="form.price">
             <label for="file" style="margin-left: 20px;">Choose picture</label>
             <input type="file" @change="updatePhoto($event.target.files[0])" accept="image/*">
@@ -62,13 +59,10 @@
     <div v-if="this.form.type_id === 4">
         <form @submit.prevent class="send_item">
             <input type="text" placeholder="Name" v-model="form.name">
-            <input type="text" placeholder="Core" v-model="form.param1">
-            <input type="text" placeholder="Cpu clock" v-model="form.param2">
-            <input type="text" placeholder="Socket" v-model="form.param3">
-            <input type="text" placeholder="Threads" v-model="form.param4">
-            <input type="text" placeholder="Tdp" v-model="form.param5">
-            <input type="text" placeholder="Nm" v-model="form.param6">
-            <input type="text" placeholder="param7" v-model="form.param7">
+            <input type="text" placeholder="Мощность" v-model="form.param1">
+            <input type="text" placeholder="Форм-фактор" v-model="form.param2">
+            <input type="text" placeholder="Вентилятор" v-model="form.param3">
+            <input type="text" placeholder="Разъемы" v-model="form.param4">
             <input type="text" placeholder="Price" v-model="form.price">
             <label for="file" style="margin-left: 20px;">Choose picture</label>
             <input type="file" @change="updatePhoto($event.target.files[0])" accept="image/*">
@@ -78,13 +72,9 @@
     <div v-if="this.form.type_id === 5">
         <form @submit.prevent class="send_item">
             <input type="text" placeholder="Name" v-model="form.name">
-            <input type="text" placeholder="Core" v-model="form.param1">
-            <input type="text" placeholder="Cpu clock" v-model="form.param2">
-            <input type="text" placeholder="Socket" v-model="form.param3">
-            <input type="text" placeholder="Threads" v-model="form.param4">
-            <input type="text" placeholder="Tdp" v-model="form.param5">
-            <input type="text" placeholder="Nm" v-model="form.param6">
-            <input type="text" placeholder="param7" v-model="form.param7">
+            <input type="text" placeholder="Форм-фактор" v-model="form.param1">
+            <input type="text" placeholder="Внутренние отсеки" v-model="form.param2">
+            <input type="text" placeholder="Разъемы" v-model="form.param3">
             <input type="text" placeholder="Price" v-model="form.price">
             <label for="file" style="margin-left: 20px;">Choose picture</label>
             <input type="file" @change="updatePhoto($event.target.files[0])" accept="image/*">
@@ -94,13 +84,12 @@
     <div v-if="this.form.type_id === 6">
         <form @submit.prevent class="send_item">
             <input type="text" placeholder="Name" v-model="form.name">
-            <input type="text" placeholder="Core" v-model="form.param1">
-            <input type="text" placeholder="Cpu clock" v-model="form.param2">
-            <input type="text" placeholder="Socket" v-model="form.param3">
-            <input type="text" placeholder="Threads" v-model="form.param4">
-            <input type="text" placeholder="Tdp" v-model="form.param5">
-            <input type="text" placeholder="Nm" v-model="form.param6">
-            <input type="text" placeholder="param7" v-model="form.param7">
+            <input type="text" placeholder="Форм-фактор" v-model="form.param1">
+            <input type="text" placeholder="Сокет" v-model="form.param2">
+            <input type="text" placeholder="Память" v-model="form.param3">
+            <input type="text" placeholder="Слоты" v-model="form.param4">
+            <input type="text" placeholder="Разъемы" v-model="form.param5">
+            <input type="text" placeholder="Сеть" v-model="form.param6">
             <input type="text" placeholder="Price" v-model="form.price">
             <label for="file" style="margin-left: 20px;">Choose picture</label>
             <input type="file" @change="updatePhoto($event.target.files[0])" accept="image/*">
@@ -110,13 +99,12 @@
     <div v-if="this.form.type_id === 7">
         <form @submit.prevent class="send_item">
             <input type="text" placeholder="Name" v-model="form.name">
-            <input type="text" placeholder="Core" v-model="form.param1">
-            <input type="text" placeholder="Cpu clock" v-model="form.param2">
-            <input type="text" placeholder="Socket" v-model="form.param3">
-            <input type="text" placeholder="Threads" v-model="form.param4">
-            <input type="text" placeholder="Tdp" v-model="form.param5">
-            <input type="text" placeholder="Nm" v-model="form.param6">
-            <input type="text" placeholder="param7" v-model="form.param7">
+            <input type="text" placeholder="Вентиляторы" v-model="form.param1">
+            <input type="text" placeholder="Максимальное тепловыделение ЦП" v-model="form.param2">
+            <input type="text" placeholder="Радиатор" v-model="form.param3">
+            <input type="text" placeholder="Основание" v-model="form.param4">
+            <input type="text" placeholder="Питание от МП" v-model="form.param5">
+            <input type="text" placeholder="Высота кулера" v-model="form.param6">
             <input type="text" placeholder="Price" v-model="form.price">
             <label for="file" style="margin-left: 20px;">Choose picture</label>
             <input type="file" @change="updatePhoto($event.target.files[0])" accept="image/*">
@@ -126,13 +114,8 @@
     <div v-if="this.form.type_id === 8">
         <form @submit.prevent class="send_item">
             <input type="text" placeholder="Name" v-model="form.name">
-            <input type="text" placeholder="Core" v-model="form.param1">
-            <input type="text" placeholder="Cpu clock" v-model="form.param2">
-            <input type="text" placeholder="Socket" v-model="form.param3">
-            <input type="text" placeholder="Threads" v-model="form.param4">
-            <input type="text" placeholder="Tdp" v-model="form.param5">
-            <input type="text" placeholder="Nm" v-model="form.param6">
-            <input type="text" placeholder="param7" v-model="form.param7">
+            <input type="text" placeholder="Вентиляторы" v-model="form.param1">
+            <input type="text" placeholder="Питание от МП" v-model="form.param2">
             <input type="text" placeholder="Price" v-model="form.price">
             <label for="file" style="margin-left: 20px;">Choose picture</label>
             <input type="file" @change="updatePhoto($event.target.files[0])" accept="image/*">
@@ -142,13 +125,8 @@
     <div v-if="this.form.type_id === 9">
         <form @submit.prevent class="send_item">
             <input type="text" placeholder="Name" v-model="form.name">
-            <input type="text" placeholder="Core" v-model="form.param1">
-            <input type="text" placeholder="Cpu clock" v-model="form.param2">
-            <input type="text" placeholder="Socket" v-model="form.param3">
-            <input type="text" placeholder="Threads" v-model="form.param4">
-            <input type="text" placeholder="Tdp" v-model="form.param5">
-            <input type="text" placeholder="Nm" v-model="form.param6">
-            <input type="text" placeholder="param7" v-model="form.param7">
+            <input type="text" placeholder="Теплопроводность" v-model="form.param1">
+            <input type="text" placeholder="Вес" v-model="form.param2">
             <input type="text" placeholder="Price" v-model="form.price">
             <label for="file" style="margin-left: 20px;">Choose picture</label>
             <input type="file" @change="updatePhoto($event.target.files[0])" accept="image/*">
@@ -158,13 +136,12 @@
     <div v-if="this.form.type_id === 10">
         <form @submit.prevent class="send_item">
             <input type="text" placeholder="Name" v-model="form.name">
-            <input type="text" placeholder="Core" v-model="form.param1">
-            <input type="text" placeholder="Cpu clock" v-model="form.param2">
-            <input type="text" placeholder="Socket" v-model="form.param3">
-            <input type="text" placeholder="Threads" v-model="form.param4">
-            <input type="text" placeholder="Tdp" v-model="form.param5">
-            <input type="text" placeholder="Nm" v-model="form.param6">
-            <input type="text" placeholder="param7" v-model="form.param7">
+            <input type="text" placeholder="Объем накопителя" v-model="form.param1">
+            <input type="text" placeholder="Скорости:" v-model="form.param2">
+            <input type="text" placeholder="Интерфейс" v-model="form.param3">
+            <input type="text" placeholder="Форм-фактор" v-model="form.param4">
+            <input type="text" placeholder="Тепловыделение" v-model="form.param5">
+            <input type="text" placeholder="Технологический процесс" v-model="form.param6">
             <input type="text" placeholder="Price" v-model="form.price">
             <label for="file" style="margin-left: 20px;">Choose picture</label>
             <input type="file" @change="updatePhoto($event.target.files[0])" accept="image/*">
