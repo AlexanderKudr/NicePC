@@ -20,8 +20,8 @@ def add_item(request: Cart, db: Session = Depends(get_db), current_user: UserAut
 
 
 @router.get('/')
-def get_user_items(db: Session = Depends(get_db), current_user: UserAuth = Depends(get_current_user)):
-    return db_cart.get_items(db, current_user.id)
+def get_user_items(current_user: UserAuth = Depends(get_current_user)):
+    return db_cart.get_items(current_user.id)
 
 
 @router.get('/delete/{id}')
