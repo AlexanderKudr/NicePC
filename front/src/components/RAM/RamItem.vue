@@ -14,12 +14,11 @@
                     <div class="css_line">
                     </div>
                     <ul class="cpu_specifications">
-                        <li>Ядро: {{ ram_item.param1 }}</li>
+                        <li>Объем: {{ ram_item.param1 }}</li>
                         <li>Частота: {{ ram_item.param2 }}</li>
-                        <li>Число ядер: {{ ram_item.param3 }}</li>
-                        <li>Сокет: {{ ram_item.param4 }}</li>
-                        <li>Тепловыделение: {{ ram_item.param5 }}</li>
-                        <li>Технологический процесс: {{ ram_item.param6 }}</li>
+                        <li>Латентность: {{ ram_item.param3 }}</li>
+                        <li>Тайминги: {{ ram_item.param4 }}</li>
+                        <li>Форм-фактор: {{ ram_item.param5 }}</li>
                     </ul>
                 </div>
             </div>

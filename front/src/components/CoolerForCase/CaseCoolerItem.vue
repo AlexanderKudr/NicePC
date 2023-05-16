@@ -14,12 +14,8 @@
                     <div class="css_line">
                     </div>
                     <ul class="cpu_specifications">
-                        <li>Ядро: {{ case_cooler_item.param1 }}</li>
-                        <li>Частота: {{ case_cooler_item.param2 }}</li>
-                        <li>Число ядер: {{ case_cooler_item.param3 }}</li>
-                        <li>Сокет: {{ case_cooler_item.param4 }}</li>
-                        <li>Тепловыделение: {{ case_cooler_item.param5 }}</li>
-                        <li>Технологический процесс: {{ case_cooler_item.param6 }}</li>
+                        <li>Вентиляторы:  {{ case_cooler_item.param1 }}</li>
+                        <li>Питание от МП:  {{ case_cooler_item.param2 }}</li>
                     </ul>
                 </div>
             </div>

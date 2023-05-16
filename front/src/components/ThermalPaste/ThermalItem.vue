@@ -14,12 +14,8 @@
                     <div class="css_line">
                     </div>
                     <ul class="cpu_specifications">
-                        <li>Ядро: {{ thermal_item.param1 }}</li>
-                        <li>Частота: {{ thermal_item.param2 }}</li>
-                        <li>Число ядер: {{ thermal_item.param3 }}</li>
-                        <li>Сокет: {{ thermal_item.param4 }}</li>
-                        <li>Тепловыделение: {{ thermal_item.param5 }}</li>
-                        <li>Технологический процесс: {{ thermal_item.param6 }}</li>
+                        <li>Теплопроводность:  {{ thermal_item.param1 }}</li>
+                        <li>Вес:  {{ thermal_item.param2 }}</li>
                     </ul>
                 </div>
             </div>

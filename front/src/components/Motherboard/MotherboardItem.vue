@@ -14,12 +14,12 @@
                     <div class="css_line">
                     </div>
                     <ul class="cpu_specifications">
-                        <li>Ядро: {{ motherboard_item.param1 }}</li>
-                        <li>Частота: {{ motherboard_item.param2 }}</li>
-                        <li>Число ядер: {{ motherboard_item.param3 }}</li>
-                        <li>Сокет: {{ motherboard_item.param4 }}</li>
-                        <li>Тепловыделение: {{ motherboard_item.param5 }}</li>
-                        <li>Технологический процесс: {{ motherboard_item.param6 }}</li>
+                        <li>Форм-фактор: {{ motherboard_item.param1 }}</li>
+                        <li>Сокет: {{ motherboard_item.param2 }}</li>
+                        <li>Память: {{ motherboard_item.param3 }}</li>
+                        <li>Слоты: {{ motherboard_item.param4 }}</li>
+                        <li>Разъемы: {{ motherboard_item.param5 }}</li>
+                        <li>Сеть: {{ motherboard_item.param6 }}</li>
                     </ul>
                 </div>
             </div>

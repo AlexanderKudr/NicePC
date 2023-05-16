@@ -14,12 +14,10 @@
                     <div class="css_line">
                     </div>
                     <ul class="cpu_specifications">
-                        <li>Ядро: {{ psu_item.param1 }}</li>
-                        <li>Частота: {{ psu_item.param2 }}</li>
-                        <li>Число ядер: {{ psu_item.param3 }}</li>
-                        <li>Сокет: {{ psu_item.param4 }}</li>
-                        <li>Тепловыделение: {{ psu_item.param5 }}</li>
-                        <li>Технологический процесс: {{ psu_item.param6 }}</li>
+                        <li>Мощность:  {{ psu_item.param1 }}</li>
+                        <li>Форм-фактор: {{ psu_item.param2 }}</li>
+                        <li>Вентилятор: {{ psu_item.param3 }}</li>
+                        <li>Разъемы: {{ psu_item.param4 }}</li>
                     </ul>
                 </div>
             </div>

@@ -14,12 +14,12 @@
                     <div class="css_line">
                     </div>
                     <ul class="cpu_specifications">
-                        <li>Ядро: {{ cpu_cooler_item.param1 }}</li>
-                        <li>Частота: {{ cpu_cooler_item.param2 }}</li>
-                        <li>Число ядер: {{ cpu_cooler_item.param3 }}</li>
-                        <li>Сокет: {{ cpu_cooler_item.param4 }}</li>
-                        <li>Тепловыделение: {{ cpu_cooler_item.param5 }}</li>
-                        <li>Технологический процесс: {{ cpu_cooler_item.param6 }}</li>
+                        <li>Вентиляторы: {{ cpu_cooler_item.param1 }}</li>
+                        <li>Максимальное тепловыделение ЦП: {{ cpu_cooler_item.param2 }}</li>
+                        <li>Радиатор: {{ cpu_cooler_item.param3 }}</li>
+                        <li>Основание:  {{ cpu_cooler_item.param4 }}</li>
+                        <li>Питание от МП: {{ cpu_cooler_item.param5 }}</li>
+                        <li>Высота кулера: {{ cpu_cooler_item.param6 }}</li>
                     </ul>
                 </div>
             </div>
