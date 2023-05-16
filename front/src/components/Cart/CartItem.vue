@@ -1,7 +1,7 @@
 <template>
     <div class="cart_item">
         <div class="product">
-            <img src="@/resoures/intelcore_i5-10400f.jpg" alt="">
+            <img :src="path+cart_item.image" alt="">
             <p class="name" href="#">{{ cart_item.name }}</p>
             <p class="price" href="#">{{ cart_item.price }}₽</p>
             <button @click="deleteItem" class="tooltip">
@@ -16,7 +16,7 @@
     export default {
         data() {
             return {
-
+                path: 'http://127.0.0.1:8000/',
             }
         },
         props: {
