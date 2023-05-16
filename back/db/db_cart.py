@@ -20,12 +20,6 @@ def add_item_to_cart(db: Session, request: Cart, user_id):
     return new_item
 
 
-# def get_items(db: Session, user_id: int):
-#     items = db.query(DbItem).join(DbUserCart).filter(DbUserCart.user_id == user_id).all()
-#     return items
-
-
-
 def get_items(user_id: int):
     connection = psycopg2.connect(
                 host=os.getenv('DB_HOST'),
