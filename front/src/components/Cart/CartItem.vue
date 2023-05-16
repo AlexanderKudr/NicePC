@@ -27,7 +27,7 @@
         },
         methods: {
             async deleteItem() {
-                await axios.get(`http://127.0.0.1:8000/cart/delete/${this.cart_item.id}`, {headers: {'Authorization': `Bearer ${localStorage.getItem('token')}`}})
+                await axios.get(`http://127.0.0.1:8000/cart/delete/${this.cart_item.cart_item_id}`, {headers: {'Authorization': `Bearer ${localStorage.getItem('token')}`}})
                 location.reload()
             }
         }
