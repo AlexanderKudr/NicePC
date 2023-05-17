@@ -1,5 +1,5 @@
 !<template>
-    <div style="overflow-y: auto;" >
+    <div style="overflow-y: auto; margin-bottom: 100px;" >
         <cpu-cooler-item :cpu_cooler_item="cpu_cooler_item" v-for="cpu_cooler_item in cpu_cooler_items"/>
     </div>
 </template>

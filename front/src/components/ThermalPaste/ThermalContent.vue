@@ -1,5 +1,5 @@
 !<template>
-    <div style="overflow-y: auto;">
+    <div style="overflow-y: auto; margin-bottom: 100px;">
         <thermal-item :thermal_item="thermal_item" v-for="thermal_item in thermal_items"/>
     </div>
 </template>

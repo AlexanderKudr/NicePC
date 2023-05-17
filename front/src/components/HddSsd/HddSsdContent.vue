@@ -1,5 +1,5 @@
 !<template>
-    <div style="overflow-y: auto;">
+    <div style="overflow-y: auto; margin-bottom: 100px;">
         <HddSsdItem :prebuilt_item="prebuilt_item" v-for="prebuilt_item in prebuilt_items"/>
     </div>
 </template>

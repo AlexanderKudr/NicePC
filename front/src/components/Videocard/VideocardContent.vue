@@ -1,5 +1,5 @@
 !<template>
-    <div style="overflow-y: auto;">
+    <div style="overflow-y: auto; margin-bottom: 100px;">
         <videocard-item :videocard_item="videocard_item" v-for="videocard_item in videocard_items"/>
     </div>
 </template>

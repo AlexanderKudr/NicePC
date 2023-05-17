@@ -1,5 +1,5 @@
 !<template>
-    <div style="overflow-y: auto;">
+    <div style="overflow-y: auto; margin-bottom: 100px;">
         <psu-item :psu_item="psu_item" v-for="psu_item in psu_items"/>
     </div>
 </template>

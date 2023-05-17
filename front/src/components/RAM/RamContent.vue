@@ -1,5 +1,5 @@
 !<template>
-    <div style="overflow-y: auto;">
+    <div style="overflow-y: auto; margin-bottom: 100px;">
         <ram-item :ram_item="ram_item" v-for="ram_item in ram_items"/>
     </div>
 </template>

@@ -1,5 +1,5 @@
 !<template>
-    <div style="overflow-y: auto;">
+    <div style="overflow-y: auto; margin-bottom: 100px;">
         <motherboard-item :motherboard_item="motherboard_item" v-for="motherboard_item in motherboard_items"/>
     </div>
 </template>
