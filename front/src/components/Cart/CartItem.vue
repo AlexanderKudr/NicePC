@@ -1,42 +1,41 @@
 <template>
     <div class="cart_item">
         <div class="product">
-            <img :src="path+cart_item.image" alt="">
+            <img :src="path + cart_item.image" alt="computer-parts" width=150 height=150>
             <p class="name" href="#">{{ cart_item.name }}</p>
             <p class="price" href="#">{{ cart_item.price }}₽</p>
-            <button @click="deleteItem" class="tooltip">
-                <img src="@/resoures/delete_button.svg" alt="">
+            <button @click="deleteItem">
+                <img src="@/resoures/delete_button.svg" alt="delete-button">
             </button>
         </div>
     </div>
 </template>
 
 <script>
-    import axios from 'axios';
-    export default {
-        data() {
-            return {
-                path: 'http://127.0.0.1:8000/',
-            }
-        },
-        props: {
-            cart_item: {
-                type: Object,
-                required: true,
-            }
-        },
-        methods: {
-            async deleteItem() {
-                await axios.get(`http://127.0.0.1:8000/cart/delete/${this.cart_item.cart_item_id}`, {headers: {'Authorization': `Bearer ${localStorage.getItem('token')}`}})
-                location.reload()
-            }
+import axios from 'axios';
+export default {
+    data() {
+        return {
+            path: 'http://127.0.0.1:8000/',
+        }
+    },
+    props: {
+        cart_item: {
+            type: Object,
+            required: true,
+        }
+    },
+    methods: {
+        async deleteItem() {
+            await axios.get(`http://127.0.0.1:8000/cart/delete/${this.cart_item.cart_item_id}`, { headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` } })
+            location.reload()
         }
     }
+}
 </script>
 
 <style lang="scss">
-    
-h2{
+h2 {
     margin-top: 10px;
     margin-bottom: 20px;
     font-size: 30px;
@@ -44,79 +43,23 @@ h2{
 
 .cart_item {
     display: flex;
-    width: 920px;
+    margin: 0 auto;
+    width: 80%;
     justify-content: space-between;
 
     .product {
         display: flex;
         font-size: 20px;
         margin-bottom: 90px;
-        width: 920px;
-        justify-content: space-between;
-        
-        .name{
-            margin-top:15px ;
-        }
+        width: 100%;
+        align-items: center;
+        justify-content: space-around;
 
-        .price{
-            margin-top:15px ;
-        }
-
-        .tooltip {
-            z-index: 2;
-        }
-
-        .tooltip img {
-        width: 30px;
-        height: 30px;
-        margin-right: 20px;
-        &:hover > svg path {
-        fill: rgba(221, 134, 221, 0.781);
-
-      }
-        }
-            
-        img { 
-            width: 100px;
+        .name,
+        .price {
+            margin-top: 15px;
         }
     }
-    
-    .buy{
-        font-size: 20px;
-        display: flex;
-        padding: 20px;
-        grid-column: auto / span 1;
-        background-color: rgba(202, 202, 202, 0.5);
-        flex-direction: column;
 
-        .text2{
-            margin-top: 5px;
-        }
-
-        .text3{
-            margin-top: 20px;
-        }
-
-        .buying{
-            height: 40px;
-            margin-top: 20px;
-            border-radius: 5px;
-            background-color: rgba(128, 0, 128, 0.5);
-        }
-
-        .buying:hover{
-            color: white;
-        }
-        
-        .delete_all{
-            height: 40px;
-            border-radius: 5px;
-            margin-top: 20px;
-            background-color: rgba(128, 0, 128, 0.5);
-        }
-        .delete_all:hover{
-            color: white;
-        }
-    }
 }
 </style>

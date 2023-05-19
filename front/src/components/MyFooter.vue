@@ -14,15 +14,14 @@ export default {
 <style lang="scss" scoped>
 .footer {
 	display: flex;
-	border-top-right-radius: 20px;
-	border-top-left-radius: 20px;
+
 	align-items: center;
 	justify-content: center;
 	font-size: 1.3rem;
 	height: 50px;
 	width: 100%;
-	background-color: rgb(0, 0, 0);
-	color: white;
+	background-color: rgb(21, 21, 21);
+	color: rgb(240, 240, 240);
 	position: fixed;
 	bottom: 0;
 	left: 0;

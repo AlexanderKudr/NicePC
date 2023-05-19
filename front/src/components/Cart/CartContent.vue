@@ -1,111 +1,121 @@
 <template>
     <div>
-        <div class="cart_top">
-            <h2>Корзина</h2>
-            <div class="buy">
-                <p class="text1">В корзине</p> 
-                <p class="text2">{{ this.items_count }} товаров</p>
-                <p class="text3">На {{ this.allItemsPrice }}₽</p>
-                <button class="buying">К оформлению</button>
-                <button class="delete_all" @click="deleteAllItems">Очистить корзину</button>
-            </div>
-        </div>
         <div class="cart_items">
-            <cart-item :cart_item="cart_item" v-for="cart_item in cart_items"/>
+            <cart-item :cart_item="cart_item" v-for="cart_item in cart_items" />
+        </div>
+        <div class="cart_top">
+            <h2 class="cart_header">Корзина</h2>
+            <div class="buy">
+                <div class="buy-text">
+                    <p>В корзине</p>
+                    <p>{{ this.items_count }} товаров</p>
+                    <p>На {{ this.allItemsPrice }}₽</p>
+                </div>
+                <div class="cart_buttons">
+                    <button class="buying">К оформлению</button>
+                    <button class="delete_all" @click="deleteAllItems">Очистить корзину</button>
+                </div>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
-    import axios from "axios"
-    import CartItem from "@/components/Cart/CartItem.vue"
-    export default {
-        data() {
-            return {
-                cart_items: [],
-                items_count: null,
-                allItemsPrice: 0
-            }
-        },
-        components:{
-            CartItem
-        },
-        methods: {
-            async fetchCart() {
-                await axios.get('http://127.0.0.1:8000/cart/', {headers: {'Authorization': `Bearer ${localStorage.getItem('token')}`}})
-            .then((res) => {
-                this.cart_items = res.data
-                console.log(res.data)
-                this.items_count = res.data.length
-                for (let i = 0; i < res.data.length; i++) {
-                    this.allItemsPrice += Number(res.data[i].price.replace(/\s+/g, ''))
-                }
-            })
-            },
-            async deleteAllItems() {
-                try{
-                    await axios.get('http://127.0.0.1:8000/cart/del/all/', {headers: {'Authorization': `Bearer ${localStorage.getItem('token')}`}})
-                    location.reload()
-                }
-                catch(error) {
-                    alert('Error')
-                }
-            }
-        },
-        beforeMount() {
-            this.fetchCart()
+import axios from "axios"
+import CartItem from "@/components/Cart/CartItem.vue"
+export default {
+    data() {
+        return {
+            cart_items: [],
+            items_count: null,
+            allItemsPrice: 0
         }
+    },
+    components: {
+        CartItem
+    },
+    methods: {
+        async fetchCart() {
+            await axios.get('http://127.0.0.1:8000/cart/', { headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` } })
+                .then((res) => {
+                    this.cart_items = res.data
+                    console.log(res.data)
+                    this.items_count = res.data.length
+                    for (let i = 0; i < res.data.length; i++) {
+                        this.allItemsPrice += Number(res.data[i].price.replace(/\s+/g, ''))
+                    }
+                })
+        },
+        async deleteAllItems() {
+            try {
+                await axios.get('http://127.0.0.1:8000/cart/del/all/', { headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` } })
+                location.reload()
+            }
+            catch (error) {
+                alert('Error')
+            }
+        }
+    },
+    beforeMount() {
+        this.fetchCart()
     }
+}
 </script>
 
 <style lang="scss">
 .cart_top {
     display: flex;
-    justify-content: space-between;
-    z-index: 1;
+    flex-direction: column;
+    width: 60%;
+    margin: 0 auto 70px;
+
 }
 
-.cart_items {
-    margin-top: -230px;
-    max-width: 920px;
+.cart_header {
+    font-size: 32px;
 }
 
 .buy {
     font-size: 20px;
     display: flex;
-    padding: 20px;
-    background-color: rgba(202, 202, 202, 0.5);
+    padding: 5%;
+    background-color: rgb(246, 246, 246);
     flex-direction: column;
-    width: 300px;
-    margin-top: 100px;
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.392);
 
-    .text2{
-        margin-top: 5px;
+    &-text>p {
+        margin-bottom: 10px;
+        padding-left: 20%;
     }
 
-    .text3{
-        margin-top: 20px;
+    .cart_buttons {
+        display: flex;
+        flex-direction: column;
     }
 
-    .buying{
-        height: 40px;
-        margin-top: 20px;
-        border-radius: 5px;
-        background-color: rgba(128, 0, 128, 0.5);
-    }
-
-    .buying:hover{
-        color: white;
-    }
-    
-    .delete_all{
+    %reuse-buttons {
         height: 40px;
         border-radius: 5px;
-        margin-top: 20px;
         background-color: rgba(128, 0, 128, 0.5);
+        width: 60%;
+        color: rgb(240, 239, 239);
+        transition:  0.15s all;
+        font-weight: 600;
+
+        &:hover {
+            color: white;
+        }
     }
-    .delete_all:hover{
-        color: white;
+
+    .buying {
+        margin: 20px auto;
+        @extend %reuse-buttons;
     }
+
+    .delete_all {
+        margin: 0 auto;
+        @extend %reuse-buttons;
+    }
+
 }
 </style>
